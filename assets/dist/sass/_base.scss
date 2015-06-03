@@ -1,0 +1,19 @@
+html {
+	background: $red;
+}
+
+a{
+	@include transition(all .2s ease-in-out);
+}
+p{
+	font-family: $text;
+	margin: 10px 0;
+	color: #fff;
+	@include transition(all .2s ease-in-out);
+}
+h1,h2,h3,h4,h5,h6{
+	font-family: $bold;
+	margin: 20px 0;
+	color: #fff;
+	@include transition(all .2s ease-in-out);
+}
