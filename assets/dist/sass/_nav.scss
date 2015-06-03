@@ -1,0 +1,15 @@
+nav{
+	width: 600px;
+	float:right;
+	ul{
+		li{
+			display: inline-block;
+			margin-right: 40px;
+			a{
+				font-weight: lighter;
+				letter-spacing: 0.1em;
+				text-transform: uppercase;
+			}
+		}
+	}
+}
