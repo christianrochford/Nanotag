@@ -1,15 +1,127 @@
 nav{
-	width: 600px;
+	width: auto;
 	float:right;
+	margin-right: 20px;
+	@include transition(all .2s ease-in-out);
+	@include breakpoint(tablet){
+		width: 300px;
+		height: 100%;
+		background: $blue-opaque;
+		margin-right: 0;
+		position: absolute;
+		top: -20px;
+		right: -300px;
+		padding-top: 60px;
+		z-index: 999;
+	}
 	ul{
 		li{
 			display: inline-block;
-			margin-right: 40px;
+			margin-right: 24px;
+			position: relative;
+			@include breakpoint(tablet){
+				margin-right: 0;
+				float: left;
+				width: 100%;
+			}
 			a{
+				color: $blue;
 				font-weight: lighter;
 				letter-spacing: 0.1em;
 				text-transform: uppercase;
+				@include breakpoint(tablet){
+					color: $white;
+					display: block;
+					width: 300px;
+					height: 40px;
+					text-align: center;
+					line-height: 3em;
+					padding: 0;
+					&:after{
+						width: 0;
+					}
+					&:hover, &:focus {
+						background: $white;
+						color: $blue;
+					}
+				}
+			}
+			.icon-close {
+				display: none;
+				@include breakpoint(tablet) {
+					display: block;
+					font-size: 1.5em;
+  					padding-top: 7px;
+  					&:hover, &:focus {
+						background: none;
+						color: $white;
+					}
+				}
+			}
+		}
+		.has-dropdown:hover, .has-dropdown:focus {
+			.dropdown{
+				height: auto;
+				padding: 10px;
+				@include breakpoint(tablet){
+					height: 0;
+					padding: 0;
+				}
 			}
 		}
 	}
+	.dropdown{
+		position: absolute;
+		background: $white-opaque;
+		margin: 0;
+		width: 192px;
+		margin-left: -106px;
+		left: 50%;
+		font-size: 0.8em;
+		padding: 0 10px;
+		box-sizing: content-box;
+		overflow:hidden;
+		height: 0;
+		@include transition(all .2s ease-in-out);
+		@include breakpoint(tablet) {
+			position: relative;
+			width: 300px;
+			left: 0;
+			margin: 0;
+			background: none;
+			padding: 0;
+		}
+		li{
+			margin: 0;
+			display: inline-block;
+			width: 100%;
+			text-align: center;
+			a {
+				@include breakpoint(tablet) {
+					background: $white;
+					color: $blue;
+					display: block;
+					width: 300px;
+					height: 40px;
+					text-align: center;
+					line-height: 3em;
+					padding: 0;
+				}
+			}
+		}
+		.no-desktop{
+			display: none;
+			@include breakpoint(tablet) {
+				display: inline-block;
+			}
+		}
+	}
+	.dropdown.open {
+		height: auto !important;
+		padding: 0 !important;
+		background: $white;
+	}
+}
+nav.on {
+	right: 0;
 }

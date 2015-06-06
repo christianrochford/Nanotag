@@ -1,19 +1,199 @@
+* {
+	@include border-box();
+	-webkit-tap-highlight-color: rgba(0,0,0,0);
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+/* Clearfix */
+
+.group, %group { 
+	*zoom: 1; 
+	&:before, &:after { content: ""; display: table; }
+	&:after { clear: both; }
+}
+
 html {
 	background: $white;
 }
 
+body {
+	background: $white;
+	font: 400 16px $text;
+	line-height:1.3em;
+	height: 100%;
+	overflow-x: hidden;
+	position: relative;
+	width: 100%;
+}
+
+
 a{
+	outline: none;
+	padding: 8px 0;
+	position: relative;
 	@include transition(all .2s ease-in-out);
+	&:after {
+	  position: absolute;
+	  top: 100%;
+	  left: 0;
+	  width: 100%;
+	  height: 1px;
+	  background: $blue-opaque;
+	  content: '';
+	  opacity: 0;
+	  @include transition(all .2s ease-in-out);
+	  -webkit-transform: translateY(10px);
+	  -moz-transform: translateY(10px);
+	  transform: translateY(10px);
+	}
+	&:hover, &:focus{
+		color: $blue;
+		&:after{
+			opacity: 0.8;
+			-webkit-transform: translateY(0px);
+			-moz-transform: translateY(0px);
+			transform: translateY(0px);
+		}
+	}
 }
-p{
-	font-family: $text;
+
+.no-hover:after {
+	width: 0;
+}
+
+.wrapper {
+	margin: 0;
+	border: none;
+	padding: 0 10px;
+	width: 100%;
+	
+	@include breakpoint(tablet) {
+		margin: 0 auto;
+		max-width: 760px;
+		padding: 0;
+	}
+	
+	@include breakpoint(desktop) {		
+		max-width: 976px;
+	}
+}
+
+p {
+	font-family: $par;
 	margin: 10px 0;
-	color: #fff;
+	color: $black;
 	@include transition(all .2s ease-in-out);
 }
-h1,h2,h3,h4,h5,h6{
+
+strong, bold {
+	font-weight: 700;
+}
+
+i, em {
+	font-style: italic;
+	color: $blue-opaque;
+	font-weight: 700;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	color: $blue;
 	font-family: $text;
-	margin: 20px 0;
-	color: #fff;
-	@include transition(all .2s ease-in-out);
+	font-weight: 700;
+	letter-spacing: -0.02em;
+	line-height: 1.2em;
+	text-align: center;
+}
+
+h1 {
+	font-size: toem(26px);	
+}
+
+h2 {
+	font-size: toem(31px);
+	margin:0px 0px 26px;
+}
+
+h3 {
+	font-size: toem(26px);
+	margin:0px 0px 22px;
+}
+
+h4 {
+	font-size: toem(22px);
+	margin:0px 0px 22px;
+}
+
+h5 {
+	font-size: 1em;
+	margin:0px 0px 18px;
+}
+
+h6 {
+	font-size: toem(15px);
+	margin:0px 0px 15px;
+}
+
+
+@include breakpoint(tablet) {
+	h1 {
+		font-size: toem(37px);		
+	}
+	
+	h2 {
+		font-size: toem(45px);	
+		margin:0px 0px 27px;	
+	}
+	
+	h3 {
+		font-size: toem(37px);
+		margin:0px 0px 27px;		
+	}
+	
+	h4 {
+		font-size: toem(31px);		
+	}
+	
+	h5 {
+		font-size: toem(26px);
+		margin:0px 0px 22px;
+	}
+	
+	h6 {
+		font-size: toem(22px);
+	}
+}
+
+@include breakpoint(desktop) {
+	h1 {
+		font-size: toem(45px);
+	}
+}
+
+.main-btn {
+	background: $blue;
+	clear: both;
+	color: $white;
+	display: block;
+	font-size: toem(21px);
+	font-weight: regular;
+	line-height: 2em;
+	height: 60px;
+	margin: 0 auto;
+	max-width: 280px;
+	padding: 14px 20px;
+	position: relative;
+	text-align: center;
+	text-decoration: none;
+	text-transform: uppercase;
+
+	&:hover, &:focus {
+		background: $blue-opaque;
+		color: $white;
+	}
+	
+	@include breakpoint(tablet) {
+		height: 64px;
+		padding: 16px 20px;
+	}
 }

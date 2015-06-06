@@ -1,3 +1,14 @@
+$mainprefixes: -webkit-, -moz-;
+$allprefixes: -webkit-, -moz-, -o-;
+
+
+@mixin border-box() {
+	@each $prefix in $mainprefixes {
+		#{$prefix}box-sizing: border-box;
+	}
+	box-sizing: border-box;
+}
+
 @mixin breakpoint($point, $value: 0) {
 	@if $point == mobile {
 		@media (max-width: 320px) { @content; }

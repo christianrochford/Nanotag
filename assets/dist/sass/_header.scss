@@ -1,7 +1,28 @@
 header{
+	width: 100%;
 	margin-top: 20px;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 2;
 
 	#logo{
 		margin: 0 40px;
+	}
+
+	.icon-menu {
+		color: $blue;
+		display: none;
+		width: 32px;
+		padding: 0;
+		font-size: 2em;
+		float: right;
+		margin-right: 30px;
+		&:after{
+			width:0;
+		}
+		@include breakpoint(tablet){
+			display: block;
+		}
 	}
 }

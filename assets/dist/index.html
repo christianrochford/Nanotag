@@ -13,20 +13,149 @@
 <script src="js/modernizr.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 </head>
-<body>
+<body class="home">
 
 <header>
-	<img src="img/logo.png" alt="Nanotag Technologies" id="logo">
+	<a href="/" class="no-hover"><img src="img/logo.png" alt="Nanotag Technologies" id="logo"></a>
 	<nav>
-		<ul>
+		<ul class="group">
+			<li><a href="#" class="icon-close" aria-hidden="true"></a></li>
+			<li><a href="index.html">Home</a></li>
+			<li class="has-dropdown"><a href="about.html" class="dd-parent">About</a>
+				<ul class="dropdown">
+					<li class="no-desktop"><a href="#" class="no-hover">About Us</a></li>
+					<li><a href="#" class="no-hover">Nanotag Technology</a></li>
+					<li><a href="#" class="no-hover">Our Team</a></li>
+					<li><a href="#" class="no-hover">Our Partners</a></li>
+					<li><a href="#" class="no-hover">Careers</a></li>
+				</ul>
+			</li>
+			<li><a href="products.html">Products</a></li>
+			<li><a href="news.html">News</a></li>
+			<li><a href="contact.html">Contact</a></li>
+		</ul>
+	</nav>
+	<a href="#" class="icon-menu" aria-hidden="true"></a>
+</header>
+
+<div id="banner">
+	<div id="intro">
+		<h2>Lorem ipsum dolor sit amet</h2>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam consequatur eius, sequi, maiores iure eveniet, libero sed eaque dignissimos alias voluptatibus voluptates totam! Vitae voluptas odit iure, dolore, totam debitis.</p>
+	</div>
+	<div id="arrow-wrap">
+		<a href="#products" class="icon-arrow-down no-hover" aria-hidden="true"></a>
+	</div>
+</div>
+
+<div id="products">
+	<div class="wrapper">
+		<h2>Products</h2>
+		<p id="intro-par">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod voluptatum repudiandae temporibus praesentium odio reiciendis qui molestias laboriosam ab. Nisi doloribus adipisci at, earum enim, sit laudantium est iste aut!</p>
+		<div class="flexslider">
+          <ul class="slides">
+			<li>
+				<div class="product">
+					<img src="img/product1.jpg" alt="product">
+					<h4>Product Name</h4>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis quidem, incidunt, perspiciatis nesciunt reiciendis cumque tempore libero necessitatibus, deleniti temporibus adipisci. Voluptatem pariatur rerum iste, porro fugiat magni itaque alias...</p>
+					<a href="#">Read More</a>
+				</div>
+			</li>
+			<li>
+				<div class="product">
+					<img src="img/product2.jpg" alt="product">
+					<h4>Product Name</h4>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis quidem, incidunt, perspiciatis nesciunt reiciendis cumque tempore libero necessitatibus, deleniti temporibus adipisci. Voluptatem pariatur rerum iste, porro fugiat magni itaque alias...</p>
+					<a href="#">Read More</a>
+				</div>
+			</li>
+			<li>
+				<div class="product">
+					<img src="img/product1.jpg" alt="product">
+					<h4>Product Name</h4>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis quidem, incidunt, perspiciatis nesciunt reiciendis cumque tempore libero necessitatibus, deleniti temporibus adipisci. Voluptatem pariatur rerum iste, porro fugiat magni itaque alias...</p>
+					<a href="#">Read More</a>
+				</div>
+			</li>
+			<li>
+				<div class="product">
+					<img src="img/product2.jpg" alt="product">
+					<h4>Product Name</h4>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis quidem, incidunt, perspiciatis nesciunt reiciendis cumque tempore libero necessitatibus, deleniti temporibus adipisci. Voluptatem pariatur rerum iste, porro fugiat magni itaque alias...</p>
+					<a href="#">Read More</a>
+				</div>
+			</li>
+			<li>
+				<div class="product">
+					<img src="img/product1.jpg" alt="product">
+					<h4>Product Name</h4>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis quidem, incidunt, perspiciatis nesciunt reiciendis cumque tempore libero necessitatibus, deleniti temporibus adipisci. Voluptatem pariatur rerum iste, porro fugiat magni itaque alias...</p>
+					<a href="#">Read More</a>
+				</div>
+			</li>
+			<li>
+				<div class="product">
+					<img src="img/product2.jpg" alt="product">
+					<h4>Product Name</h4>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis quidem, incidunt, perspiciatis nesciunt reiciendis cumque tempore libero necessitatibus, deleniti temporibus adipisci. Voluptatem pariatur rerum iste, porro fugiat magni itaque alias...</p>
+					<a href="#">Read More</a>
+				</div>
+			</li>
+		</ul>
+	  </div>
+	  <a href="products.html" class="main-btn no-hover">View All Products</a>
+	</div>
+</div>
+
+<div id="news">
+	<div class="wrapper">
+		<h2>News</h2>
+		<p id="intro-par">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod voluptatum repudiandae temporibus praesentium odio reiciendis qui molestias laboriosam ab. Nisi doloribus adipisci at, earum enim, sit laudantium est iste aut!</p>
+		<div id="news-wrapper">
+	        <ul class="group">
+				<li>
+					<div class="news-item">
+						<img src="img/news1.jpg" alt="news">
+						<h4>Lorem ipsum dolor sit amet, consectetur adipisicing elit</h4>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis quidem, incidunt, perspiciatis nesciunt reiciendis cumque tempore libero necessitatibus, deleniti temporibus adipisci. Voluptatem pariatur rerum iste, porro fugiat magni itaque alias...</p>
+						<a href="#">Read More</a>
+					</div>
+				</li>
+				<li>
+					<div class="news-item">
+						<img src="img/news2.jpg" alt="news">
+						<h4>Lorem ipsum dolor sit amet, consectetur adipisicing elit</h4>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis quidem, incidunt, perspiciatis nesciunt reiciendis cumque tempore libero necessitatibus, deleniti temporibus adipisci. Voluptatem pariatur rerum iste, porro fugiat magni itaque alias...</p>
+						<a href="#">Read More</a>
+					</div>
+				</li>
+			</ul>
+		</div>
+		<a href="news.html" class="main-btn no-hover">More News</a>
+	</div>
+</div>
+
+<footer class="group">
+	<a href="/" class="no-hover"><img src="img/logo.png" alt="Nanotag Technologies" id="footer-logo"></a>
+	<div id="footer-nav">
+		<ul id="main-nav">
 			<li><a href="index.html">Home</a></li>
 			<li><a href="about.html">About</a></li>
 			<li><a href="products.html">Products</a></li>
 			<li><a href="news.html">News</a></li>
 			<li><a href="contact.html">Contact</a></li>
 		</ul>
-	</nav>
-</header>
+		<ul id="subnav">
+			<li><a href="#">FAQs</a></li>
+			<li><a href="#">Privacy Policy</a></li>
+			<li><a href="#">Terms & Conditions</a></li>
+		</ul>
+	</div>
+	<p id="copy">&copy; Nanotag Technologies 2015</p>
+	<p id="postroch">Site by <a href="http://postroch.com" target="_blank" class="no-hover">POSTROCH</a></p>
+</footer>
+
 <script src="js/nanotag.min.js"></script>
 </body>
 </html>
