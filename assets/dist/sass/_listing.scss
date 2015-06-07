@@ -1,0 +1,123 @@
+#listing{
+	padding: 100px 40px 40px;
+	h2{
+		color: $blue;
+	}
+	#intro-par{
+		text-align: center;
+		width: 80%;
+		margin: 10px 10% 40px;
+	}
+	#search-panel {
+		text-align: center;
+		#select-wrap{
+			padding: 0 20px;
+			width: 50%;
+			float: left;
+			@include breakpoint(max-width, 860px){
+				width: 100%;
+				display: inline-block;
+				margin-bottom: 20px;
+				float: none;
+				width: auto;
+			}
+			label{
+				color: $blue;
+				font: $text;
+				font-weight: bold;
+				font-size: 1.4em;
+				display: inline-block;
+				float: left;
+				margin-right: 20px;
+			}
+			select{
+				float: left;
+				width: 300px;
+				@include breakpoint(max-width, 1060px){
+					width: 200px;
+				}
+				@include breakpoint(mobile-landscape){
+					width: 150px;
+				}
+			}
+		}
+		form{
+			width: 50%;
+			float: left;
+			padding: 0 20px;
+			@include breakpoint(max-width, 860px){
+				width: 100%;
+				display: inline-block;
+				float: none;
+				width: auto;
+			}
+			input[type="text"]{
+				width: 300px;
+				float: left;
+				@include breakpoint(max-width, 1060px){
+					width: 200px;
+				}
+				@include breakpoint(mobile-landscape){
+					width: 100%;
+				}
+			}
+			input[type="submit"]{
+				background: $blue;
+				border: none;
+				box-shadow: none;
+				color: #fff;
+				display: block;
+				font-size: toem(21px);
+				font-weight: regular;
+				line-height: 2em;
+				height: 32px;
+				margin: 0 20px;
+				width: 100px;
+				padding: 4px 20px;
+				text-align: center;
+				text-transform: uppercase;
+				float: left;
+				@include breakpoint(mobile-landscape){
+					width: 100%;
+					margin: 0 0 40px 0;
+				}
+			}
+		}
+	}
+	#list-wrapper{
+		text-align: center;
+		width: 100%;
+	}
+	ul{
+		display: inline-block;
+		.list-item{
+			width: 33.333%;
+			float: left;
+			@include breakpoint(tablet){
+				width: 50%;
+			}
+			@include breakpoint(mobile-landscape){
+				width: 100%;
+			}
+			.item{
+				padding: 0 20px;
+				img{
+					width: 100%;
+					margin-bottom: 20px;
+				}
+				h4{
+					color: $blue;
+					text-align: left;
+				}
+				p{
+					text-align: left;
+				}
+				.read-more{
+					float: right;
+					color: $blue;
+					margin-bottom: 40px;
+				}
+			}
+		}
+	}
+}

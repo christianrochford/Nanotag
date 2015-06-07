@@ -39,40 +39,6 @@
 			}
 		}
 	}
-	#products{
-		background: $blue-opaquer;
-		padding: 40px;
-		h2{
-			color: $blue;
-		}
-		#intro-par{
-			text-align: center;
-			width: 80%;
-			margin: 10px 10% 40px;
-		}
-		ul{
-			li{
-				.product{
-					padding: 0 20px;
-					img{
-						width: 100%;
-						margin-bottom: 20px;
-					}
-					h4{
-						color: $blue;
-						text-align: left;
-					}
-					p{
-						text-align: left;
-					}
-					a{
-						float: right;
-						color: $blue;
-					}
-				}
-			}
-		}
-	}
 	#news{
 		background: $white;
 		padding: 40px;

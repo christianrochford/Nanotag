@@ -41,6 +41,22 @@ $(document).ready(function(){
 	    }, 500);
 	});
 
+	$('#filter').change(function(){
+		selected = $(this).val();
+		$('.list-item').hide();
+		if(selected === 'others'){
+			$('.list-item').fadeIn(200);
+			$('#filter option').each(function(){
+				if($(this).val() !== '' && $(this).val() !== 'others'){
+					$('.' + $(this).val()).hide();
+				}
+			});
+		}else if(selected === ''){
+			$('.list-item').fadeIn(200);
+		}else{
+			$('.'+selected).fadeIn(200);
+		}
+	});
 });
 
 $(window).resize(function(){

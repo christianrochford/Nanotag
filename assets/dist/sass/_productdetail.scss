@@ -1,0 +1,141 @@
+#product-detail {
+	padding-bottom: 40px;
+	position: relative;
+	@include breakpoint(desktop) {
+		padding: 10px 0 38px;
+	}
+		
+	#product-content {
+		max-width: 976px;
+		padding: 100px 0 0 0;
+		margin: 0 auto;
+		@include breakpoint(desktop) {
+			padding: 100px 0 0;
+			max-width: 685px;
+		}
+		@include breakpoint(tablet){
+			padding: 80px 19px 20px;
+		}
+	}
+	
+	#intro{
+		width: 100%;
+		height: auto;
+		#image-wrap{
+			width: 50%;
+			float: left;
+			position: relative;
+			@include breakpoint(tablet){
+				width: 100%;
+			}
+			img{
+				width: 100%;
+			}
+			.icon-view{
+				display: block;
+				background: $blue-opaque;
+				color: $white;
+				position: absolute;
+				right: 0;
+				bottom: 0;
+				padding: 5px 10px;
+				font-size: 2em;
+				font-weight: lighter;
+				&:hover, &:focus {
+					background: $white-opaque;
+					color: $blue;
+				} 
+			}
+		}
+		#text-wrap{
+			padding-left: 20px;
+			float: left;
+			width: 50%;
+			@include breakpoint(tablet){
+				width: 100%;
+				padding-left: 0;
+			}
+			h2{
+				margin-top: 0;
+				@include breakpoint(tablet){
+					margin-top: 27px;
+				}
+			}
+			.main-btn{
+				float: right;
+				@include breakpoint(tablet){
+					width: 100%;
+					float: none;
+					max-width: none;
+					margin-bottom: 40px;
+				}
+			}
+		}
+	}
+
+	p span{
+		color: $blue;
+		font-weight: regular;
+		font-family: $text;
+	}
+
+	.icon-file, .icon-image{
+		color: $black;
+		font-family: $par;
+		font-weight: lighter;
+		&:hover, &:focus {
+			color: $blue;
+		}
+		&::before{
+			content: "\e124";
+			font-family: 'nanotag';
+			font-weight: regular;
+		}
+	}
+	
+	table {
+		width: 100%;
+
+		th {
+			background: $white;
+			border: 1px solid $blue;
+			color: $blue;
+			font-family: $text;
+			font-size: toem(22px);
+			line-height: toem(31px, 22px);
+			font-weight: 700;
+			text-align: left;
+			padding: 17px 20px;
+			
+			&:first-child {
+				background: $white;
+			}
+		}
+
+		td {
+			background: #f4f4f4;
+			border: 1px solid $blue;
+			color: $black;
+			text-align: left;
+			padding: 13px 20px;
+			min-width: 0;
+			
+			&:first-child {
+				min-width: 0;
+				width: 165px;
+			}
+			@include breakpoint(tablet){
+				&:first-child {
+					width: 170px;
+				}
+			}
+			@include breakpoint(mobile-landscape){
+				min-width: 237px;
+				&:first-child {
+					min-width: 172px;
+				}
+			}
+		}
+	}
+}
+

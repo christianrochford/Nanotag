@@ -1,0 +1,235 @@
+.inner {
+	padding-bottom: 40px;
+	position: relative;
+	@include breakpoint(desktop) {
+		padding: 10px 0 38px;
+	}
+		
+	.inner-content {
+		max-width: 976px;
+		padding: 100px 332px 0 0;
+		margin: 0 auto;
+		@include breakpoint(desktop) {
+			padding: 100px 0 0;
+			max-width: 685px;
+		}
+		@include breakpoint(tablet){
+			padding: 80px 19px 20px;
+		}
+	}
+	
+	h1, h2, h3, h4, h5, h6 {
+		text-align: left;
+	}
+
+	h1 {
+		margin-bottom: 24px;
+		@include breakpoint(tablet){
+			margin-bottom: 20px;
+		}
+	}
+	
+	h2, h3 {
+		margin: 34px 0px 23px;
+		@include breakpoint(tablet){
+			margin: 0px 0px 16px;
+		}
+	}
+	
+	h4 {
+		margin: 27px 0px 19px;
+		@include breakpoint(tablet){
+			margin: 41px 0px 20px;
+		}
+	}
+	
+	h5 {
+		margin: 0px 0 18px;
+	}
+	
+	h6 {
+		margin: 0px 0px 14px;
+	}
+	
+	p {
+		strong {
+			color: #646464;
+		}
+		img {
+			max-width: 100%;
+		}
+		a{
+			color: $blue;
+			&:after {
+				top: 80%;
+			}
+		}
+	}
+	
+	ul {
+		margin-bottom: 27px;
+		max-width: 500px;
+		li{
+			margin-bottom: 6px;
+			padding: 0 0 0 30px;
+			position: relative;
+			font-size: regular;
+			font-family: $text;
+			color: $black;
+			
+			&:before {
+				color: $blue;
+				content: "•";
+				font-size: 2em;
+				font-family: $text;
+				left: 17px;
+				line-height: 1em;
+				top: -5px;
+				position: absolute;
+			}
+		}
+	}
+	
+	ol {
+		counter-reset: item;
+		margin-bottom: 27px;
+		max-width: 500px;
+		
+		li {
+			display: block;
+			margin-bottom: 6px;
+			padding-left: 30px;
+			position: relative;
+			font-size: regular;
+			font-family: $text;
+			color: $black;
+        
+			&:before { 
+				content: counter(item) ". "; 
+				counter-increment: item;
+				color: $blue;
+				font-weight: 700;
+				position: absolute;
+				left: 12px;
+			}
+		}
+	}
+	
+	table {
+		width: 100%;
+
+		th {
+			background: $white;
+			border: 1px solid $blue;
+			color: $blue;
+			font-family: $text;
+			font-size: toem(22px);
+			line-height: toem(31px, 22px);
+			font-weight: 700;
+			text-align: left;
+			padding: 17px 20px;
+			
+			&:first-child {
+				background: $white;
+			}
+		}
+
+		td {
+			background: #f4f4f4;
+			border: 1px solid $blue;
+			color: $black;
+			text-align: left;
+			padding: 13px 20px;
+			min-width: 0;
+			
+			&:first-child {
+				min-width: 0;
+				width: 165px;
+			}
+			@include breakpoint(tablet){
+				&:first-child {
+					width: 170px;
+				}
+			}
+			@include breakpoint(mobile-landscape){
+				min-width: 237px;
+				&:first-child {
+					min-width: 172px;
+				}
+			}
+		}
+	}
+
+	.sub-menu {
+		margin: 70px auto 0;
+		max-width: 480px;
+		padding: 0 10px;
+		position: absolute;
+		top: 50px;
+		left: calc(50% + 176px);
+		width: 312px;
+		@include breakpoint(desktop){
+			margin: 0 auto;
+			position: relative;
+			top: 0;
+			left: 0;
+		}
+		
+		h4 {
+			color: $blue;
+			font-family: $text;
+			font-size: toem(18px);
+			letter-spacing: 0.2em;
+			margin-top: 0;
+			text-transform: uppercase;
+			text-align: center;
+		}
+		
+		ul {
+			
+			li {
+				background: $blue;
+				display: block;
+				margin: 0 0 1px 0;
+				padding: 0;
+				@include transition(all, 0.3s, ease-in-out);
+				&:before {
+					content: "";
+				}			
+				
+				a {
+					background: $blue;
+					color: $white;
+					display: block;
+					padding: 17px 20px 16px;
+					text-decoration: none;
+					
+					&:hover {
+						background: $blue-opaque;
+					}
+				}
+				
+				ul {
+					margin: -6px 0 0 0;
+					padding-bottom: 13px;
+					
+					li {
+						margin-bottom: 4px;
+						padding: 0;
+						
+						a {
+							background: $blue;
+							display: block;
+							padding: 12px 0 11px 31px;
+							
+							&:hover {
+								background: $blue-opaque;
+							}
+						}
+					} 
+				}
+			}
+		}
+	}
+}
+
