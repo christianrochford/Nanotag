@@ -28,7 +28,8 @@ body {
 }
 
 
-a{
+a, li a {
+	color: $blue;
 	outline: none;
 	padding: 8px 0;
 	position: relative;

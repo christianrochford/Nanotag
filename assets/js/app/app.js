@@ -57,6 +57,36 @@ $(document).ready(function(){
 			$('.'+selected).fadeIn(200);
 		}
 	});
+
+	$('.icon-view').click(function(e){
+		e.preventDefault();
+		$('header').css({position: 'fixed'});
+		$('#gallery').fadeIn(200);
+		$('.gallery-slider').flexslider({
+	      slideshow: false,
+	      animation: "slide",
+	      animationLoop: true,
+	      directionNav: true
+	    });
+	});
+	$('.icon-close').click(function(e){
+		e.preventDefault();
+		$('header').css({position: 'absolute'});
+		$('#gallery').fadeOut(200);
+	});
+	$('.gallery-link').click(function(e){
+		e.preventDefault();
+		slide = $(this).attr('data-gallery');
+		$('header').css({position: 'fixed'});
+		$('#gallery').fadeIn(200);
+		$('.gallery-slider').flexslider({
+	      slideshow: false,
+	      animation: "slide",
+	      animationLoop: true,
+	      directionNav: true
+	    });
+	    $('.gallery-slider').flexAnimate(1); 
+	});
 });
 
 $(window).resize(function(){
@@ -90,39 +120,3 @@ $(window).resize(function(){
 	});
 
 });
-
-(function() {
- 
-  // store the slider in a local variable
-  var $window = $(window),
-      flexslider;
- 
-  // tiny helper function to add breakpoints
-  function getGridSize() {
-    return (window.innerWidth < 480) ? 1 :
-           (window.innerWidth < 760) ? 2 : 3;
-  }
- 
-  $(function() {
-    SyntaxHighlighter.all();
-  });
- 
-  $window.load(function() {
-    $('.flexslider').flexslider({
-      animation: "slide",
-      animationLoop: true,
-      itemWidth: 400,
-      itemMargin: 0,
-      minItems: getGridSize(), // use function to pull in initial value
-      maxItems: getGridSize() // use function to pull in initial value
-    });
-  });
- 
-  // check grid size on resize event
-  $window.resize(function() {
-    var gridSize = getGridSize();
- 
-    flexslider.vars.minItems = gridSize;
-    flexslider.vars.maxItems = gridSize;
-  });
-}());

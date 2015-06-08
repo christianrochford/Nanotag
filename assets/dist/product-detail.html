@@ -62,28 +62,28 @@
 			Lorem ipsum dolor sit amet.<br>
 			<span>Reactivity:</span>
 			Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut quas sunt temporibus.<br>
-			<span>Price:</span>
-			&euro;50/1mg vial.<br>
 		</p>
 		<h2>Applications</h2>
 		<h5>Immunoprecipitation(IP)</h5>
 		<ul>
 			<li><a href="#" class="icon-file no-hover" aria-hidden="true">Protocol</a></li>
 			<li><a href="#" class="icon-file no-hover" aria-hidden="true">MSDS</a></li>
-			<li><a href="#gallery" class="icon-image no-hover" aria-hidden="true">Gallery</a></li>
+			<li><a href="#" data-gallery="ip" class="icon-image no-hover gallery-link" aria-hidden="true">Gallery</a></li>
 		</ul>
 		</p>
 		<h5>Immunofluorescence(IF)</h5>
 		<ul>
 			<li><a href="#" class="icon-file no-hover" aria-hidden="true">Protocol</a></li>
 			<li><a href="#" class="icon-file no-hover" aria-hidden="true">MSDS</a></li>
-			<li><a href="#gallery" class="icon-image no-hover" aria-hidden="true">Gallery</a></li>
+			<li><a href="#" data-gallery="if" class="icon-image no-hover gallery-link" aria-hidden="true">Gallery</a></li>
 		</ul>
 		</p>
 		<h2>Conjugations</h2>
 		<ul>
-			<li>Alexa488</li>
-			<li>Cy5</li>
+			<li>None - &euro;30/1mg vial.</li>
+			<li>Alexa488 - &euro;50/1mg vial.</li>
+			<li>Cy5 - &euro;50/1mg vial.</li>
+			<li>Custom - Please <a href="cart.html">contact us</a>.</li>
 		</ul>
 		<h2>References</h2>
 		<p>Aggregation of alpha-synuclein in Lewy bodies of sporadic Parkinson′s disease and dementia with Lewy bodies.<br>Baba M, Nakajo S, Tu PH, Tomita T, Nakaya K, Lee VM, Trojanowski JQ, Iwatsubo T
@@ -100,7 +100,7 @@
 	<div class="wrapper">
 		<h2>Related Products</h2>
           <ul class="slides">
-			<li>
+			<li class="if">
 				<div class="product">
 					<a href="" class="no-hover"><img src="img/product1.jpg" alt="product"></a>
 					<a href="" class="no-hover"><h4>Product Name</h4></a>
@@ -108,7 +108,7 @@
 					<a href="#" class="read-more">Read More</a>
 				</div>
 			</li>
-			<li>
+			<li class="id">
 				<div class="product">
 					<a href="" class="no-hover"><img src="img/product1.jpg" alt="product"></a>
 					<a href="" class="no-hover"><h4>Product Name</h4></a>
@@ -116,7 +116,7 @@
 					<a href="#" class="read-more">Read More</a>
 				</div>
 			</li>
-			<li>
+			<li class="if">
 				<div class="product">
 					<a href="" class="no-hover"><img src="img/product1.jpg" alt="product"></a>
 					<a href="" class="no-hover"><h4>Product Name</h4></a>
@@ -148,6 +148,32 @@
 	<p id="copy">&copy; Nanotag Technologies 2015</p>
 	<p id="postroch">Site by <a href="http://postroch.com" target="_blank" class="no-hover">POSTROCH</a></p>
 </footer>
+
+<!-- Modal Gallery -->
+<div id="gallery">
+	<div id="modal-bg"></div>
+	<a href="#" class="icon-close no-hover" aria-hidden="true"></a>
+	<div class="gallery-slider">
+		<ul class="slides">
+			<li>
+				<img src="img/product1.jpg" alt="">
+				<p class="flex-caption">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sit adipisci sed porro est cupiditate eaque, culpa voluptatum sint eius, molestiae suscipit quis saepe aut reiciendis! Debitis repellat fuga at nostrum.</p>
+			</li>
+			<li>
+				<img src="img/product2.jpg" alt="">
+				<p class="flex-caption">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit minus soluta tempore ad. Similique omnis atque voluptates esse odio, minus natus modi maiores eaque dicta magnam ex molestias dolore et.</p>
+			</li>
+			<li>
+				<img src="img/news1.jpg" alt="">
+				<p class="flex-caption">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod ut ea sint odit, quos atque nesciunt? Eos id optio cumque, sapiente beatae obcaecati quis ea! Ea nam illo pariatur ratione.</p>
+			</li>
+			<li>
+				<img src="img/news2.jpg" alt="">
+				<p class="flex-caption">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus tempora libero, cumque illum, reiciendis voluptate ut, sed, maxime eveniet quibusdam veritatis. Debitis, voluptatibus consequatur corrupti aut hic quod voluptates sunt.</p>
+			</li>
+		</ul>
+	</div>
+</div>
 
 <script src="js/nanotag.min.js"></script>
 </body>

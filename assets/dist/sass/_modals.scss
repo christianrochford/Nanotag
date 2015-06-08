@@ -1,0 +1,54 @@
+#gallery{
+	display: none;
+	position: fixed;
+	top: 70px;
+	left: 0;
+	width: 100%;
+	height: auto;
+	#modal-bg{
+		background: $blue-opaque;
+		position: fixed;
+		top: 70px;
+		left: 0;
+		width: 100%;
+		height: 3000px;
+	}
+	.icon-close{
+		position: absolute;
+		top: 20px;
+		right: 40px;
+		color: $white;
+		font-size: 2em;
+		&:hover, &:focus {
+			font-size: 2.1em;
+		}
+		@include breakpoint(mobile-landscape){
+			right: 20px;
+		}
+	}
+	.gallery-slider{
+		width: 100%;
+		margin: 100px 0 0;
+		.slides {
+			li{
+				text-align: center;
+			}
+			img, .flex-caption {
+				display: inline-block;
+				width: 50%;
+				max-width: 800px;
+				margin: 0 auto;
+				@include breakpoint(max-width, 860px){
+					width: 70%;
+				}
+			}
+			.flex-caption {
+				background: $white-opaque;
+				font-family: $par;
+				font-weight: lighter;
+				padding: 10px;
+				text-align: left;
+			}
+		}
+	}
+}
