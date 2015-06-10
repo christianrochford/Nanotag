@@ -13,7 +13,7 @@
 <script src="js/modernizr.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 </head>
-<body>
+<body class="product-detail">
 
 <header>
 	<a href="/" class="no-hover"><img src="img/logo.png" alt="Nanotag Technologies" id="logo"></a>
@@ -36,6 +36,7 @@
 		</ul>
 	</nav>
 	<a href="#" class="icon-menu" aria-hidden="true"></a>
+	<a href="cart.html" id="cart-link" class="no-hover"><span>Cart</span><span id="quantity">2</span></a>
 </header>
 
 <div class="inner" id="product-detail">
@@ -100,7 +101,7 @@
 	<div class="wrapper">
 		<h2>Related Products</h2>
           <ul class="slides">
-			<li class="if">
+			<li>
 				<div class="product">
 					<a href="" class="no-hover"><img src="img/product1.jpg" alt="product"></a>
 					<a href="" class="no-hover"><h4>Product Name</h4></a>
@@ -108,7 +109,7 @@
 					<a href="#" class="read-more">Read More</a>
 				</div>
 			</li>
-			<li class="id">
+			<li>
 				<div class="product">
 					<a href="" class="no-hover"><img src="img/product1.jpg" alt="product"></a>
 					<a href="" class="no-hover"><h4>Product Name</h4></a>
@@ -116,7 +117,7 @@
 					<a href="#" class="read-more">Read More</a>
 				</div>
 			</li>
-			<li class="if">
+			<li>
 				<div class="product">
 					<a href="" class="no-hover"><img src="img/product1.jpg" alt="product"></a>
 					<a href="" class="no-hover"><h4>Product Name</h4></a>
@@ -155,19 +156,23 @@
 	<a href="#" class="icon-close no-hover" aria-hidden="true"></a>
 	<div class="gallery-slider">
 		<ul class="slides">
-			<li>
+			<li class="slide" id="0" data-application="if">
 				<img src="img/product1.jpg" alt="">
 				<p class="flex-caption">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sit adipisci sed porro est cupiditate eaque, culpa voluptatum sint eius, molestiae suscipit quis saepe aut reiciendis! Debitis repellat fuga at nostrum.</p>
 			</li>
-			<li>
+			<li class="slide" id="1" data-application="ip">
 				<img src="img/product2.jpg" alt="">
 				<p class="flex-caption">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit minus soluta tempore ad. Similique omnis atque voluptates esse odio, minus natus modi maiores eaque dicta magnam ex molestias dolore et.</p>
 			</li>
-			<li>
+			<li class="slide" id="2" data-application="if">
 				<img src="img/news1.jpg" alt="">
 				<p class="flex-caption">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod ut ea sint odit, quos atque nesciunt? Eos id optio cumque, sapiente beatae obcaecati quis ea! Ea nam illo pariatur ratione.</p>
 			</li>
-			<li>
+			<li class="slide" id="3" data-application="ip">
+				<img src="img/news2.jpg" alt="">
+				<p class="flex-caption">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus tempora libero, cumque illum, reiciendis voluptate ut, sed, maxime eveniet quibusdam veritatis. Debitis, voluptatibus consequatur corrupti aut hic quod voluptates sunt.</p>
+			</li>
+			<li class="slide" id="4" data-application="ip">
 				<img src="img/news2.jpg" alt="">
 				<p class="flex-caption">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus tempora libero, cumque illum, reiciendis voluptate ut, sed, maxime eveniet quibusdam veritatis. Debitis, voluptatibus consequatur corrupti aut hic quod voluptates sunt.</p>
 			</li>

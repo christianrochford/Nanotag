@@ -30,7 +30,18 @@
 				float: left;
 				margin-right: 20px;
 			}
-			select{
+			select {
+				background: #fdfdfd;
+				border: 1px solid #bfbbbb;
+				border-radius: 0;
+				color: $black;
+				font-family: $text;
+				font-size: toem(18px);
+				height: 30px;
+				margin: 0;
+				max-width: 395px;
+				outline: none;
+				padding: 0 17px;
 				float: left;
 				width: 300px;
 				@include breakpoint(max-width, 1060px){
@@ -38,6 +49,12 @@
 				}
 				@include breakpoint(mobile-landscape){
 					width: 150px;
+				}
+				-webkit-appearance: none;
+				-webkit-border-radius: 0px;
+				cursor: pointer;	
+				&:focus {
+					border: 1px solid $blue;
 				}
 			}
 		}

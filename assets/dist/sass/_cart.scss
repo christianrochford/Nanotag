@@ -1,0 +1,58 @@
+#cart{
+	width: 100%;
+	table{
+		width: 100%;
+		tr{
+			width: 100%;
+			th{
+				background: $blue;
+				width: auto;
+				padding: 5px;
+				font-family: $text;
+				font-weight: regular;
+				color: $white;
+				text-transform: uppercase;
+				text-align:center;
+			}
+			td{
+				width: auto;
+				padding: 10px 5px;
+				font-family: $par;
+				font-weight: lighter;
+				color: $black;
+				text-align:center;
+				
+				select {
+					background: #fdfdfd;
+					border: 1px solid #bfbbbb;
+					border-radius: 0;
+					color: $black;
+					font-family: $text;
+					font-size: toem(18px);
+					height: 30px;
+					margin: 0;
+					max-width: 395px;
+					outline: none;
+					padding: 0 17px;
+					width: 100%;
+					-webkit-appearance: none;
+					-webkit-border-radius: 0px;
+					cursor: pointer;	
+					&:focus {
+						border: 1px solid $blue;
+					}
+				}
+			}
+		}
+		tr.blue{
+			background: $blue;
+		}
+	}
+	.main-btn {
+		float: right;
+		@include breakpoint(mobile){
+			width: 100%;
+		}
+	}
+}
+

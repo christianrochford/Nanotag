@@ -1,5 +1,5 @@
 header{
-	background: $white;
+	background: none;
 	width: 100%;
 	height: 70px;
 	padding-top: 20px;
@@ -27,4 +27,41 @@ header{
 			display: block;
 		}
 	}
+	#cart-link{
+		position: absolute;
+		top: 0;
+		right: 150px;
+		display: block;
+		color: $black;
+		font-family: $text;
+		text-transform: uppercase;
+		font-weight: regular;
+		width: 114px;
+		background: $white;
+		border: 1px solid $blue;
+		padding: 0;
+		@include breakpoint(mobile){
+			right: 50px;
+		}
+		#label{
+			display: block;
+			background: $blue;
+			color: $white;
+			font-family: $text;
+			text-transform: uppercase;
+			font-weight: regular;
+			padding: 0 10px;
+			width: 70px;
+			float: left;
+		}
+		#quantity{
+			padding: 0 10px;
+			display: block;
+			width: 30px;
+			float: left;
+		}
+	}
+}
+.product-detail header {
+	background: $white;
 }
