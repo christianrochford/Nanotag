@@ -11073,7 +11073,7 @@ var outdatedBrowser = function(t) {
 
 	$('#banner').height(winH);
 
-	if(winW < 760){
+	if(winW < 921){
 		$('nav').css({height: winH});
 		$('.dd-parent').addClass('clickable');
 	} else {
@@ -11171,7 +11171,7 @@ $(window).resize(function(){
 
 	$('#banner').height(winH);
 
-	if(winW < 760){
+	if(winW < 921){
 		$('nav').css({height: winH});
 		$('.icon-menu').show();
 		$('.dd-parent').addClass('clickable');

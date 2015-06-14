@@ -2,9 +2,9 @@ nav{
 	width: auto;
 	float:right;
 	margin-right: 20px;
-	padding-top: 5px;
+	padding-top: 26px;
 	@include transition(all .2s ease-in-out);
-	@include breakpoint(tablet){
+	@include breakpoint(max-width, 920px){
 		width: 300px;
 		height: 100%;
 		background: $blue-opaque;
@@ -20,7 +20,7 @@ nav{
 			display: inline-block;
 			margin-right: 24px;
 			position: relative;
-			@include breakpoint(tablet){
+			@include breakpoint(max-width, 920px){
 				margin-right: 0;
 				float: left;
 				width: 100%;
@@ -30,7 +30,7 @@ nav{
 				font-weight: lighter;
 				letter-spacing: 0.1em;
 				text-transform: uppercase;
-				@include breakpoint(tablet){
+				@include breakpoint(max-width, 920px){
 					color: $white;
 					display: block;
 					width: 300px;
@@ -49,7 +49,7 @@ nav{
 			}
 			.icon-close {
 				display: none;
-				@include breakpoint(tablet) {
+				@include breakpoint(max-width, 920px) {
 					display: block;
 					font-size: 1.5em;
   					padding-top: 7px;
@@ -58,13 +58,17 @@ nav{
 						color: $white;
 					}
 				}
+				&:before{
+					font-family: 'nanotag';
+					content: "\e117"
+				}
 			}
 		}
 		.has-dropdown:hover, .has-dropdown:focus {
 			.dropdown{
 				height: auto;
 				padding: 10px;
-				@include breakpoint(tablet){
+				@include breakpoint(max-width, 920px){
 					height: 0;
 					padding: 0;
 				}
@@ -84,7 +88,7 @@ nav{
 		overflow:hidden;
 		height: 0;
 		@include transition(all .2s ease-in-out);
-		@include breakpoint(tablet) {
+		@include breakpoint(max-width, 920px) {
 			position: relative;
 			width: 300px;
 			left: 0;
@@ -98,7 +102,7 @@ nav{
 			width: 100%;
 			text-align: center;
 			a {
-				@include breakpoint(tablet) {
+				@include breakpoint(max-width, 920px) {
 					background: $white;
 					color: $blue;
 					display: block;
@@ -112,7 +116,7 @@ nav{
 		}
 		.no-desktop{
 			display: none;
-			@include breakpoint(tablet) {
+			@include breakpoint(max-width, 920px) {
 				display: inline-block;
 			}
 		}
@@ -125,4 +129,14 @@ nav{
 }
 nav.on {
 	right: 0;
+}
+.home2 nav, .home3 nav{
+	ul {
+		.dropdown{
+			background: $white;
+		}
+		li a {
+			font-weight: bold;
+		}
+	} 
 }

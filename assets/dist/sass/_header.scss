@@ -1,15 +1,22 @@
 header{
 	background: none;
 	width: 100%;
-	height: 70px;
-	padding-top: 20px;
+	height: 98px;
+	padding-top: 10px;
 	position: absolute;
 	top: 0;
 	left: 0;
 	z-index: 2;
+	@include breakpoint(max-width, 940px){
+		height: 78px;
+	}
 
 	#logo{
 		margin: 0 40px;
+		@include transition(all .2s ease-in-out);
+		@include breakpoint(max-width, 940px){
+			width: 200px;
+		}
 	}
 
 	.icon-menu {
@@ -23,7 +30,7 @@ header{
 		&:after{
 			width:0;
 		}
-		@include breakpoint(tablet){
+		@include breakpoint(max-width, 920px){
 			display: block;
 		}
 	}
@@ -62,6 +69,9 @@ header{
 		}
 	}
 }
-.product-detail header {
+.home2 header {
 	background: $white;
+}
+.home3 header, .product-detail header {
+	background: $white-opaque;
 }

@@ -39,6 +39,62 @@
 			}
 		}
 	}
+	#banner.bg-img{
+		background: url('../img/product4.jpg');
+		background-repeat: no-repeat;
+		background-size: cover;
+		background-position: center top;
+		#intro{
+			background: $blue-textbg;
+			padding: 20px 40px;
+			width: 60%;
+			position: absolute;
+			bottom: 120px;
+			margin: 0 20%;
+			@include breakpoint(tablet) {
+				bottom: 50px;
+				width: 80%;
+				margin: 0 10%;
+			}
+			@include breakpoint(mobile-landscape) {
+				width: 90%;
+				margin: 0 5%;
+			}
+			h2,p {
+				color: $white;
+				text-align: center;
+			}
+		}
+		#arrow-wrap{
+			.icon-arrow-down {
+				color: $white;
+			}
+		}
+	}
+	#banner.bg-img.bg-slider{
+		background: none;
+		max-height: 500px;
+		@include breakpoint(tablet){
+			height: auto !important;
+		}
+		.slides li {
+			position: relative;
+			img {
+				width: 100%;
+				position: relative;
+				z-index: -1;
+			}
+		}
+		#intro{
+			position: absolute;
+			top: 200px;
+			bottom: auto;
+			z-index: 1;
+			@include breakpoint(mobile-landscape) {
+				top: 100px;
+			}
+		}
+	}
 	#news{
 		background: $white;
 		padding: 40px;
