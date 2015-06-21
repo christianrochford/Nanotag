@@ -67,7 +67,6 @@ nav{
 		.has-dropdown:hover, .has-dropdown:focus {
 			.dropdown{
 				height: auto;
-				padding: 10px;
 				@include breakpoint(max-width, 920px){
 					height: 0;
 					padding: 0;
@@ -77,13 +76,14 @@ nav{
 	}
 	.dropdown{
 		position: absolute;
-		background: $white-opaque;
+		background: $white;
 		margin: 0;
 		width: 192px;
 		margin-left: -106px;
+		top: 30px;
 		left: 50%;
 		font-size: 0.8em;
-		padding: 0 10px;
+		padding: 10px;
 		box-sizing: content-box;
 		overflow:hidden;
 		height: 0;
@@ -91,17 +91,32 @@ nav{
 		@include breakpoint(max-width, 920px) {
 			position: relative;
 			width: 300px;
+			top: 0;
 			left: 0;
 			margin: 0;
 			background: none;
 			padding: 0;
 		}
 		li{
+			baackground: $white;
 			margin: 0;
 			display: inline-block;
 			width: 100%;
 			text-align: center;
+			&:nth-child(2){
+				padding-top: 30px;
+				@include breakpoint(max-width, 920px) {
+					padding-top: 0;
+				}
+			}			
 			a {
+				display: inline-block;
+				color: $blue;
+				background: $white;
+				padding: 10px 5px;
+				&:hover, &:focus {
+					text-decoration: underline;
+				}
 				@include breakpoint(max-width, 920px) {
 					background: $white;
 					color: $blue;
