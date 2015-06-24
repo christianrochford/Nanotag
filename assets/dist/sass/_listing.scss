@@ -1,5 +1,8 @@
 #listing{
-	padding: 100px 40px 40px;
+	padding: 150px 40px 40px;
+	@include breakpoint(mobile-landscape){
+		padding: 100px 40px 40px;
+	}
 	h2{
 		color: $blue;
 	}

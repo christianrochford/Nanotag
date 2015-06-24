@@ -11171,7 +11171,7 @@ $(window).resize(function(){
 
 	$('#banner').height(winH);
 
-	if(winW < 921){
+	if(winW < 1071){
 		$('nav').css({height: winH});
 		$('.icon-menu').show();
 		$('.dd-parent').addClass('clickable');

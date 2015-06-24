@@ -1,5 +1,5 @@
 .inner {
-	padding-bottom: 40px;
+	padding: 50px 0 40px;
 	position: relative;
 	@include breakpoint(desktop) {
 		padding: 10px 0 38px;
@@ -163,7 +163,7 @@
 	.sub-menu {
 		margin: 70px auto 0;
 		max-width: 480px;
-		padding: 0 10px;
+		padding: 50px 10px 0;
 		position: absolute;
 		top: 50px;
 		left: calc(50% + 176px);

@@ -1,20 +1,21 @@
 header{
 	background: none;
 	width: 100%;
-	height: 98px;
+	height: 78px;
 	padding-top: 10px;
 	position: absolute;
 	top: 0;
 	left: 0;
 	z-index: 2;
-	@include breakpoint(max-width, 940px){
-		height: 78px;
-	}
 
 	#logo{
 		margin: 0 40px;
+		width: 266px;
 		@include transition(all .2s ease-in-out);
-		@include breakpoint(max-width, 940px){
+		@include breakpoint(tablet){
+			margin: 0 20px;
+		}
+		@include breakpoint(mobile-landscape){
 			width: 200px;
 		}
 	}
@@ -30,7 +31,7 @@ header{
 		&:after{
 			width:0;
 		}
-		@include breakpoint(max-width, 920px){
+		@include breakpoint(max-width, 1070px){
 			display: block;
 		}
 	}
@@ -47,8 +48,8 @@ header{
 		background: $white;
 		border: 1px solid $blue;
 		padding: 0;
-		@include breakpoint(mobile){
-			right: 50px;
+		@include breakpoint(max-width, 1070px){
+			display: none;
 		}
 		#label{
 			display: block;
@@ -69,9 +70,6 @@ header{
 		}
 	}
 }
-.home2 header {
-	background: $white;
-}
-.home3 header, .product-detail header {
+.home header {
 	background: $white;
 }
