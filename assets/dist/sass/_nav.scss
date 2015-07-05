@@ -18,7 +18,7 @@ nav{
 	ul{
 		li{
 			display: inline-block;
-			margin-right: 24px;
+			margin-right: 20px;
 			position: relative;
 			@include breakpoint(max-width, 1070px){
 				margin-right: 0;
@@ -47,6 +47,12 @@ nav{
 					}
 				}
 			}
+			.icon-cart {
+				@include breakpoint(max-width, 1070px) {
+					font-size: 1.6em;
+					padding: 8px;
+				}
+			}
 			.icon-close {
 				display: none;
 				@include breakpoint(max-width, 1070px) {
@@ -62,12 +68,6 @@ nav{
 					font-family: 'nanotag';
 					content: "\e117"
 				}
-			}
-		}
-		.no-desktop{
-			display: none;
-			@include breakpoint(max-width, 1070px) {
-				display: inline-block;
 			}
 		}
 		.has-dropdown:hover, .has-dropdown:focus {
@@ -110,7 +110,7 @@ nav{
 			display: inline-block;
 			width: 100%;
 			text-align: center;
-			&:first-child{
+			&:nth-child(2){
 				padding-top: 20px;
 				@include breakpoint(max-width, 1070px) {
 					padding-top: 0;
@@ -121,7 +121,7 @@ nav{
 				@include breakpoint(max-width, 1070px) {
 					padding-bottom: 0;
 				}
-			}			
+			}
 			a {
 				display: inline-block;
 				color: $white;
@@ -140,6 +140,12 @@ nav{
 					line-height: 3em;
 					padding: 0;
 				}
+			}
+		}
+		.no-desktop{
+			display: none;
+			@include breakpoint(max-width, 1070px) {
+				display: inline-block;
 			}
 		}
 	}

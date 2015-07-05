@@ -4,6 +4,30 @@
 		{
 			"icon": {
 				"paths": [
+					"M665.6 870.4c0 56.525 45.773 102.4 102.4 102.4 56.525 0 102.4-45.875 102.4-102.4 0-56.627-45.875-102.4-102.4-102.4-56.627 0-102.4 45.773-102.4 102.4zM153.6 870.4c0 56.525 45.824 102.4 102.4 102.4 56.474 0 102.4-45.875 102.4-102.4 0-56.627-45.926-102.4-102.4-102.4-56.576 0-102.4 45.773-102.4 102.4zM335.206 623.206l566.682-161.894c10.803-3.123 19.712-14.797 19.712-26.112v-281.6h-716.8v-81.92c0-11.264-9.267-20.48-20.429-20.48h-163.942c-11.213 0-20.429 9.216-20.429 20.48v81.92h102.4l97.792 458.598 4.608 48.282v84.429c0 11.213 9.216 20.48 20.48 20.48h675.84c11.264 0 20.48-9.318 20.48-20.48v-79.309h-575.898c-58.88 0-60.109-28.211-10.496-42.394z"
+				],
+				"attrs": [],
+				"isMulticolor": false,
+				"tags": [
+					"shopping-cart"
+				],
+				"grid": 20
+			},
+			"attrs": [],
+			"properties": {
+				"id": 275,
+				"order": 23,
+				"prevSize": 20,
+				"code": 58880,
+				"name": "cart"
+			},
+			"setIdx": 0,
+			"setId": 2,
+			"iconIdx": 275
+		},
+		{
+			"icon": {
+				"paths": [
 					"M853.35 0h-682.702c-94.25 0-170.648 76.42-170.648 170.686v682.63c0 94.266 76.398 170.684 170.648 170.684h341.352v-448h-128v-128h128v-96c0-88.366 71.634-160 160-160h160v128h-160c-17.674 0-32 14.328-32 32v96h176l-32 128h-144v448h213.35c94.25 0 170.65-76.418 170.65-170.684v-682.63c0-94.266-76.4-170.686-170.65-170.686z"
 				],
 				"attrs": [],
@@ -25,7 +49,7 @@
 				"ligatures": "facebook2, brand7",
 				"name": "facebook"
 			},
-			"setIdx": 0,
+			"setIdx": 1,
 			"setId": 1,
 			"iconIdx": 397
 		},
@@ -53,7 +77,7 @@
 				"ligatures": "linkedin, brand63",
 				"name": "linkedin"
 			},
-			"setIdx": 0,
+			"setIdx": 1,
 			"setId": 1,
 			"iconIdx": 456
 		},
@@ -78,7 +102,7 @@
 				"code": 57344,
 				"name": "view"
 			},
-			"setIdx": 1,
+			"setIdx": 2,
 			"setId": 0,
 			"iconIdx": 0
 		},
@@ -103,7 +127,7 @@
 				"code": 57346,
 				"name": "mail"
 			},
-			"setIdx": 1,
+			"setIdx": 2,
 			"setId": 0,
 			"iconIdx": 1
 		},
@@ -128,7 +152,7 @@
 				"code": 57349,
 				"name": "link"
 			},
-			"setIdx": 1,
+			"setIdx": 2,
 			"setId": 0,
 			"iconIdx": 2
 		},
@@ -153,7 +177,7 @@
 				"code": 57360,
 				"name": "image"
 			},
-			"setIdx": 1,
+			"setIdx": 2,
 			"setId": 0,
 			"iconIdx": 3
 		},
@@ -178,7 +202,7 @@
 				"code": 57398,
 				"name": "search"
 			},
-			"setIdx": 1,
+			"setIdx": 2,
 			"setId": 0,
 			"iconIdx": 4
 		},
@@ -203,7 +227,7 @@
 				"code": 57449,
 				"name": "download"
 			},
-			"setIdx": 1,
+			"setIdx": 2,
 			"setId": 0,
 			"iconIdx": 5
 		},
@@ -228,7 +252,7 @@
 				"code": 57473,
 				"name": "share"
 			},
-			"setIdx": 1,
+			"setIdx": 2,
 			"setId": 0,
 			"iconIdx": 6
 		},
@@ -253,7 +277,7 @@
 				"code": 57491,
 				"name": "star"
 			},
-			"setIdx": 1,
+			"setIdx": 2,
 			"setId": 0,
 			"iconIdx": 7
 		},
@@ -278,7 +302,7 @@
 				"code": 57492,
 				"name": "arrow-left"
 			},
-			"setIdx": 1,
+			"setIdx": 2,
 			"setId": 0,
 			"iconIdx": 8
 		},
@@ -303,7 +327,7 @@
 				"code": 57493,
 				"name": "arrow-right"
 			},
-			"setIdx": 1,
+			"setIdx": 2,
 			"setId": 0,
 			"iconIdx": 9
 		},
@@ -328,7 +352,7 @@
 				"code": 57494,
 				"name": "arrow-up"
 			},
-			"setIdx": 1,
+			"setIdx": 2,
 			"setId": 0,
 			"iconIdx": 10
 		},
@@ -353,7 +377,7 @@
 				"code": 57495,
 				"name": "arrow-down"
 			},
-			"setIdx": 1,
+			"setIdx": 2,
 			"setId": 0,
 			"iconIdx": 11
 		},
@@ -378,7 +402,7 @@
 				"code": 57623,
 				"name": "cross"
 			},
-			"setIdx": 1,
+			"setIdx": 2,
 			"setId": 0,
 			"iconIdx": 12
 		},
@@ -403,7 +427,7 @@
 				"code": 57632,
 				"name": "menu"
 			},
-			"setIdx": 1,
+			"setIdx": 2,
 			"setId": 0,
 			"iconIdx": 13
 		},
@@ -428,7 +452,7 @@
 				"code": 57636,
 				"name": "file"
 			},
-			"setIdx": 1,
+			"setIdx": 2,
 			"setId": 0,
 			"iconIdx": 14
 		}

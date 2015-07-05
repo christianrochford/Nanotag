@@ -1,0 +1,121 @@
+<!doctype html>
+{embed="embeds/head"}
+<body class="home">
+
+{embed="embeds/header"}
+
+<div id="banner" class="bg-img bg-slider">
+	<div class="banner-slider">
+		<ul class="slides">
+			<li>
+				<img src="img/product4.jpg" alt="" class="desaturate">
+				<div id="intro">
+					<h2>Lorem ipsum dolor sit amet</h2>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam consequatur eius, sequi, maiores iure eveniet, libero sed eaque dignissimos alias voluptatibus voluptates totam! Vitae voluptas odit iure, dolore, totam debitis.</p>
+				</div>
+			</li>
+			<li>
+				<img src="img/product5.jpg" alt="" class="desaturate">
+				<div id="intro">
+					<h2>Lorem ipsum dolor sit amet</h2>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam consequatur eius, sequi, maiores iure eveniet, libero sed eaque dignissimos alias voluptatibus voluptates totam! Vitae voluptas odit iure, dolore, totam debitis.</p>
+				</div>
+			</li>
+			<li>
+				<img src="img/product6.jpg" alt="" class="desaturate">
+				<div id="intro">
+					<h2>Lorem ipsum dolor sit amet</h2>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam consequatur eius, sequi, maiores iure eveniet, libero sed eaque dignissimos alias voluptatibus voluptates totam! Vitae voluptas odit iure, dolore, totam debitis.</p>
+				</div>
+			</li>
+			<li>
+				<img src="img/product7.jpg" alt="" class="desaturate">
+				<div id="intro">
+					<h2>Lorem ipsum dolor sit amet</h2>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam consequatur eius, sequi, maiores iure eveniet, libero sed eaque dignissimos alias voluptatibus voluptates totam! Vitae voluptas odit iure, dolore, totam debitis.</p>
+				</div>
+			</li>
+		</ul>
+	</div>
+</div>
+
+{embed="embeds/products"}
+
+<div id="news">
+	<div class="wrapper">
+		<h2>News</h2>
+		<p id="intro-par">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod voluptatum repudiandae temporibus praesentium odio reiciendis qui molestias laboriosam ab. Nisi doloribus adipisci at, earum enim, sit laudantium est iste aut!</p>
+		<div id="news-wrapper">
+	        <ul class="group">
+				<li>
+					<div class="news-item">
+						<img src="img/product1-small.jpg" alt="news" class="desaturate">
+						<h4>Lorem ipsum dolor sit amet, consectetur adipisicing elit</h4>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis quidem, incidunt, perspiciatis nesciunt reiciendis cumque tempore libero necessitatibus, deleniti temporibus adipisci. Voluptatem pariatur rerum iste, porro fugiat magni itaque alias...</p>
+						<a href="#">Read More</a>
+					</div>
+				</li>
+				<li>
+					<div class="news-item">
+						<img src="img/product2-small.jpg" alt="news" class="desaturate">
+						<h4>Lorem ipsum dolor sit amet, consectetur adipisicing elit</h4>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis quidem, incidunt, perspiciatis nesciunt reiciendis cumque tempore libero necessitatibus, deleniti temporibus adipisci. Voluptatem pariatur rerum iste, porro fugiat magni itaque alias...</p>
+						<a href="#">Read More</a>
+					</div>
+				</li>
+			</ul>
+		</div>
+		<a href="news.html" class="main-btn no-hover">More News</a>
+	</div>
+</div>
+
+{embed="embeds/footer"}
+<script>
+	(function() {
+
+		$('.banner-slider').flexslider({
+	      slideshow: true,
+	      animation: "fade",
+	      animationLoop: true,
+	      directionNav: false
+	    });
+
+  // store the slider in a local variable
+  var $window = $(window),
+      flexslider;
+
+  // tiny helper function to add breakpoints
+  function getGridSize() {
+    return (window.innerWidth < 480) ? 1 :
+           (window.innerWidth < 760) ? 2 : 3;
+  }
+
+  $(function() {
+    SyntaxHighlighter.all();
+  });
+
+  $window.load(function() {
+    $('.flexslider').flexslider({
+      animation: "slide",
+      animationLoop: true,
+      itemWidth: 400,
+      itemMargin: 0,
+      minItems: 1,
+      maxItems: 4,
+      move: 1,
+      minItems: getGridSize(), // use function to pull in initial value
+      maxItems: getGridSize() // use function to pull in initial value
+    });
+  });
+
+  // check grid size on resize event
+  $window.resize(function() {
+    var gridSize = getGridSize();
+
+    flexslider.vars.minItems = gridSize;
+    flexslider.vars.maxItems = gridSize;
+  });
+}());
+</script>
+</body>
+</html>

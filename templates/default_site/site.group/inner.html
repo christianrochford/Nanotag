@@ -1,0 +1,66 @@
+{exp:channel:entries channel="inner" limit="1" disable="{gv_disable_all}"}
+<!doctype html>
+{embed="embeds/head"}
+<body>
+
+{embed="embeds/header"}
+
+<div class="inner">
+	<div class="inner-content group {if '{structure:child_ids}' == ''}full-width{/if}">
+		{page_content}
+	</div>
+	{if '{structure:child_ids}' != ''}
+	<div class="sub-menu">
+		<h4>In This Section</h4>
+		{exp:structure:nav start_from ="/{segment_1}" max_depth="2"}
+	</div>
+	{/if}
+</div>
+
+{embed="embeds/products"}
+
+{embed="embeds/footer"}
+
+<script>
+	(function() {
+
+  // store the slider in a local variable
+  var $window = $(window),
+      flexslider;
+
+  // tiny helper function to add breakpoints
+  function getGridSize() {
+    return (window.innerWidth < 480) ? 1 :
+           (window.innerWidth < 760) ? 2 : 3;
+  }
+
+  $(function() {
+    SyntaxHighlighter.all();
+  });
+
+  $window.load(function() {
+    $('.flexslider').flexslider({
+      animation: "slide",
+      animationLoop: true,
+      itemWidth: 400,
+      itemMargin: 0,
+      minItems: 1,
+      maxItems: 4,
+      move: 1,
+      minItems: getGridSize(), // use function to pull in initial value
+      maxItems: getGridSize() // use function to pull in initial value
+    });
+  });
+
+  // check grid size on resize event
+  $window.resize(function() {
+    var gridSize = getGridSize();
+
+    flexslider.vars.minItems = gridSize;
+    flexslider.vars.maxItems = gridSize;
+  });
+}());
+</script>
+</body>
+</html>
+{/exp:channel:entries}
