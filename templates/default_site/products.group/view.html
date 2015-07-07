@@ -1,3 +1,4 @@
+{exp:channel:entries channel="product" limit="1" disable="{gv_disable_all}"}
 <!doctype html>
 {embed="embeds/head"}
 <body class="product-detail">
@@ -6,94 +7,79 @@
 
 <div class="inner" id="product-detail">
 	<div class="inner-content group" id="product-content">
-		<h1>Product Name</h1>
+		<h1>{title}</h1>
 		<div id="intro" class="group">
 			<div id="image-wrap">
-				<img src="img/product1.jpg" alt="product">
+				<img src="{product_image}" alt="{title}">
 				<a href="#gallery" class="icon-view no-hover" aria-hidden="true"></a>
 			</div>
 			<div id="text-wrap">
 				<h2>Description</h2>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur sequi id vel temporibus neque, consequatur natus tempora sit libero obcaecati, eligendi mollitia quam laudantium impedit eum eos voluptatibus, explicabo</p>
+				<p>{description}</p>
 				<a href="#" class="main-btn no-hover">Add to Cart</a>
 			</div>
 		</div>
 		<h2>Specifications</h2>
 		<p>
+			{specifications}
 			<span>Immunogen:</span>
-			Lorem ipsum dolor sit amet.<br>
+			{specifications:immunogen}<br>
 			<span>Specificity:</span>
-			Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa nihil eum ducimus cupiditate corporis.<br>
+			{specifications:specificity}<br>
 			<span>Epitope:</span>
-			Lorem ipsum dolor sit amet.<br>
+			{specifications:epitope}<br>
 			<span>Reactivity:</span>
-			Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut quas sunt temporibus.<br>
+			{specifications:reactivity}<br>
+			{/specifications}
 		</p>
 		<h2>Applications</h2>
-		<h5>Immunoprecipitation(IP)</h5>
+		{applications}
+		<h5>{applications:application_name}</h5>
 		<ul>
-			<li><a href="#" class="icon-file no-hover" aria-hidden="true">Protocol</a></li>
-			<li><a href="#" class="icon-file no-hover" aria-hidden="true">MSDS</a></li>
-			<li><a href="#" data-gallery="ip" class="icon-image no-hover gallery-link" aria-hidden="true">Gallery</a></li>
+			{if applications:protocol}<li><a href="{applications:protocol}" class="icon-file no-hover" aria-hidden="true" target="_blank">Protocol</a></li>{/if}
+			{if applications:msds}<li><a href="{applications:msds}" class="icon-file no-hover" aria-hidden="true" target="_blank">MSDS</a></li>{/if}
+			{if '{applications:gallery}'=='Yes'}<li><a href="#" data-gallery="{applications:application_name}" class="icon-image no-hover gallery-link" aria-hidden="true">Gallery</a></li>{/if}
 		</ul>
-		</p>
-		<h5>Immunofluorescence(IF)</h5>
-		<ul>
-			<li><a href="#" class="icon-file no-hover" aria-hidden="true">Protocol</a></li>
-			<li><a href="#" class="icon-file no-hover" aria-hidden="true">MSDS</a></li>
-			<li><a href="#" data-gallery="if" class="icon-image no-hover gallery-link" aria-hidden="true">Gallery</a></li>
-		</ul>
-		</p>
+		{/applications}
 		<h2>Conjugations</h2>
 		<ul>
-			<li>None - &euro;30/1mg vial.</li>
-			<li>Alexa488 - &euro;50/1mg vial.</li>
-			<li>Cy5 - &euro;50/1mg vial.</li>
-			<li>Custom - Please <a href="cart.html">contact us</a>.</li>
+			{conjugations}
+			<li>{conjugations:name} - {conjugations:price_description}</li>
+			{/conjugations}
+			{if '{custom_conjugation}'=='Yes'}
+			<li>Custom - Please <a href="{site_url}cart">contact us</a>.</li>
+			{/if}
 		</ul>
+		{if '{references:total_rows}' > 0}
 		<h2>References</h2>
-		<p>Aggregation of alpha-synuclein in Lewy bodies of sporadic Parkinson′s disease and dementia with Lewy bodies.<br>Baba M, Nakajo S, Tu PH, Tomita T, Nakaya K, Lee VM, Trojanowski JQ, Iwatsubo T
-		Am J Pathol 1998 (152):879-884</p>
-		<p>Aggregation of alpha-synuclein in Lewy bodies of sporadic Parkinson′s disease and dementia with Lewy bodies.<br>Baba M, Nakajo S, Tu PH, Tomita T, Nakaya K, Lee VM, Trojanowski JQ, Iwatsubo T
-		Am J Pathol 1998 (152):879-884</p>
-		<p>Aggregation of alpha-synuclein in Lewy bodies of sporadic Parkinson′s disease and dementia with Lewy bodies.<br>Baba M, Nakajo S, Tu PH, Tomita T, Nakaya K, Lee VM, Trojanowski JQ, Iwatsubo T
-		Am J Pathol 1998 (152):879-884</p>
+		{references}
+		<p>{references:title}<br>{references:details}</p>
+		{/references}
+		{/if}
 		<a href="#" class="main-btn" style="margin-top:40px;">Add to Cart</a>
 	</div>
 </div>
 
+{if '{related_products:count}' != ''}
 <div id="related-products">
 	<div class="wrapper">
 		<h2>Related Products</h2>
-          <ul class="slides">
+    <ul class="slides">
+			{related_products}
 			<li>
 				<div class="product">
-					<a href="" class="no-hover"><img src="img/product1.jpg" alt="product"></a>
-					<a href="" class="no-hover"><h4>Product Name</h4></a>
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis quidem, incidunt, perspiciatis nesciunt reiciendis cumque tempore libero necessitatibus, deleniti temporibus adipisci. Voluptatem pariatur rerum iste, porro fugiat magni itaque alias...</p>
-					<a href="#" class="read-more">Read More</a>
+					<a href="{site_url}products/{related_products:url_title}" class="no-hover"><img src="{related_products:product_image}" alt="{related_products:title}"></a>
+					<a href="{site_url}products/{related_products:url_title}" class="no-hover"><h4>{related_products:title}</h4></a>
+					<p>{exp:eehive_hacksaw words="20" append="..."}{related_products:description}{/exp:eehive_hacksaw}</p>
+					<a href="{site_url}products/{related_products:url_title}" class="read-more">Read More</a>
 				</div>
 			</li>
-			<li>
-				<div class="product">
-					<a href="" class="no-hover"><img src="img/product1.jpg" alt="product"></a>
-					<a href="" class="no-hover"><h4>Product Name</h4></a>
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis quidem, incidunt, perspiciatis nesciunt reiciendis cumque tempore libero necessitatibus, deleniti temporibus adipisci. Voluptatem pariatur rerum iste, porro fugiat magni itaque alias...</p>
-					<a href="#" class="read-more">Read More</a>
-				</div>
-			</li>
-			<li>
-				<div class="product">
-					<a href="" class="no-hover"><img src="img/product1.jpg" alt="product"></a>
-					<a href="" class="no-hover"><h4>Product Name</h4></a>
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis quidem, incidunt, perspiciatis nesciunt reiciendis cumque tempore libero necessitatibus, deleniti temporibus adipisci. Voluptatem pariatur rerum iste, porro fugiat magni itaque alias...</p>
-					<a href="#" class="read-more">Read More</a>
-				</div>
-			</li>
+			{/related_products}
 		</ul>
-	<a href="products.html" class="main-btn no-hover">View All Products</a>
+	<a href="{site_url}products" class="main-btn no-hover">View All Products</a>
 </div>
 </div>
+{/if}
 
 <!-- Modal Gallery -->
 <div id="gallery">
@@ -101,29 +87,16 @@
 	<a href="#" class="icon-close no-hover" aria-hidden="true"></a>
 	<div class="gallery-slider">
 		<ul class="slides">
-			<li class="slide" id="0" data-application="if">
-				<img src="img/product1.jpg" alt="">
-				<p class="flex-caption">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sit adipisci sed porro est cupiditate eaque, culpa voluptatum sint eius, molestiae suscipit quis saepe aut reiciendis! Debitis repellat fuga at nostrum.</p>
+			{product_gallery}
+			<li class="slide" id="{product_gallery:count}" data-application="{product_gallery:application}">
+				<img src="{product_gallery:image}" alt="{title}">
+				<p class="flex-caption">{product_gallery:image_caption}</p>
 			</li>
-			<li class="slide" id="1" data-application="ip">
-				<img src="img/product2.jpg" alt="">
-				<p class="flex-caption">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit minus soluta tempore ad. Similique omnis atque voluptates esse odio, minus natus modi maiores eaque dicta magnam ex molestias dolore et.</p>
-			</li>
-			<li class="slide" id="2" data-application="if">
-				<img src="img/news1.jpg" alt="">
-				<p class="flex-caption">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod ut ea sint odit, quos atque nesciunt? Eos id optio cumque, sapiente beatae obcaecati quis ea! Ea nam illo pariatur ratione.</p>
-			</li>
-			<li class="slide" id="3" data-application="ip">
-				<img src="img/news2.jpg" alt="">
-				<p class="flex-caption">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus tempora libero, cumque illum, reiciendis voluptate ut, sed, maxime eveniet quibusdam veritatis. Debitis, voluptatibus consequatur corrupti aut hic quod voluptates sunt.</p>
-			</li>
-			<li class="slide" id="4" data-application="ip">
-				<img src="img/news2.jpg" alt="">
-				<p class="flex-caption">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus tempora libero, cumque illum, reiciendis voluptate ut, sed, maxime eveniet quibusdam veritatis. Debitis, voluptatibus consequatur corrupti aut hic quod voluptates sunt.</p>
-			</li>
+			{/product_gallery}
 		</ul>
 	</div>
 </div>
 {embed="embeds/footer"}
 </body>
 </html>
+{/exp:channel:entries}

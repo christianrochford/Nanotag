@@ -1,171 +1,20 @@
+{exp:channel:entries channel="news" limit="1" disable="{gv_disable_all}"}
 <!doctype html>
-<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
-<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
-<!--[if IE 7]> <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
-<!--[if IE 8]> <html class="no-js lt-ie9" lang="en"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<title>Nanotag Technologies</title>
-<link rel="stylesheet" href="css/nanotag.css">
-<!-- /build -->
-<script src="js/modernizr.min.js"></script>
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-</head>
+{embed="embeds/head"}
 <body>
 
-<header>
-	<a href="/" class="no-hover"><img src="img/logolarge.png" alt="Nanotag Technologies" id="logo"></a>
-	<nav>
-		<ul class="group">
-			<li><a href="#" class="icon-close" aria-hidden="true"></a></li>
-			<li><a href="index.html">Home</a></li>
-			<li><a href="products.html">Products</a></li>
-			<li class="has-dropdown"><a href="inner.html" class="dd-parent">Support</a>
-				<ul class="dropdown">
-					<li class="no-desktop"><a href="inner.html" class="no-hover">Support</a></li>
-					<li><a href="inner.html" class="no-hover">Why NanoTags?</a></li>
-					<li><a href="inner.html" class="no-hover">Protocols</a></li>
-					<li><a href="inner.html" class="no-hover">Troubleshooting</a></li>
-					<li><a href="inner.html" class="no-hover">FAQ</a></li>
-				</ul>
-			</li>
-			<li><a href="about.html">About</a></li>
-			<li><a href="news.html">News</a></li>
-			<li><a href="contact.html">Contact</a></li>
-			<li class="no-desktop"><a href="cart.html" class="no-hover">Cart</a></li>
-		</ul>
-	</nav>
-	<a href="#" class="icon-menu" aria-hidden="true"></a>
-</header>
+{embed="embeds/header"}
 
 <div class="inner">
-	<div class="inner-content group">
-		<h1>Page Title</h1>
-		<p>Lorem ipsum dolor sit amet, consectetur <a href="#">link example</a> adipisicing elit. Quos sequi impedit eos numquam dolores voluptatum sint temporibus <strong>bold text</strong> placeat adipisci vero reprehenderit, <i>italic text</i>, molestiae sit nulla cumque quasi, debitis.</p>
-		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos sequi impedit eos numquam dolores voluptatum sint temporibus cupiditate tenetur placeat adipisci vero reprehenderit, officia, molestiae sit nulla cumque quasi, debitis.</p>
-		<h3>Subheading</h3>
-		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos sequi impedit eos numquam dolores voluptatum sint temporibus cupiditate tenetur placeat adipisci vero reprehenderit, officia, molestiae sit nulla cumque quasi, debitis.</p>
-		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos sequi impedit eos numquam dolores voluptatum sint temporibus cupiditate tenetur placeat adipisci vero reprehenderit, officia, molestiae sit nulla cumque quasi, debitis.</p>
-		<h4>Minor Heading</h4>
-		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos sequi impedit eos numquam dolores voluptatum sint temporibus cupiditate tenetur placeat adipisci vero reprehenderit, officia, molestiae sit nulla cumque quasi, debitis.</p>
-		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos sequi impedit eos numquam dolores voluptatum sint temporibus cupiditate tenetur placeat adipisci vero reprehenderit, officia, molestiae sit nulla cumque quasi, debitis.</p>
-		<ul>
-			<li>Unordered list item one</li>
-			<li>Unordered list item two, a little longer</li>
-			<li>List item that breaks over two lines, like this: the challenge of the global digital skills gap</li>
-			<li>Last list element goes here</li>
-		</ul>
-		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos sequi impedit eos numquam dolores voluptatum sint temporibus cupiditate tenetur placeat adipisci vero reprehenderit, officia, molestiae sit nulla cumque quasi, debitis.</p>
-		<ol>
-			<li>Ordered list item one</li>
-			<li>Unordered list item two, a little longer</li>
-			<li>List item that breaks over two lines, like this: the challenge of the global digital skills gap</li>
-			<li>Last list element goes here</li>
-		</ol>
-
-	</div>
-
-	<div class="sub-menu">
-		<h4>sub-menu title here</h4>
-		<ul>
-			<li><a href="#">List of child pages</a></li>
-			<li><a href="#">Technology</a></li>
-			<li><a href="#">Careers</a>
-				<ul>
-					<li><a href="#">Position 1</a></li>
-					<li><a href="#">Position 2</a></li>
-				</ul>
-			</li>
-			<li><a href="#">Last nav item</a></li>
-		</ul>
+	<div class="inner-content group full-width">
+		<h1>{title}</h1>
+		{news_content}
 	</div>
 </div>
 
-<div id="products">
-	<div class="wrapper">
-		<h2>Products</h2>
-		<p id="intro-par">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod voluptatum repudiandae temporibus praesentium odio reiciendis qui molestias laboriosam ab. Nisi doloribus adipisci at, earum enim, sit laudantium est iste aut!</p>
-		<div class="flexslider">
-          <ul class="slides">
-			<li>
-				<div class="product">
-					<a href="product-detail.html" class="no-hover"><img src="img/product1.jpg" alt="product"></a>
-					<a href="product-detail.html" class="no-hover"><h4>Product Name</h4></a>
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis quidem, incidunt, perspiciatis nesciunt reiciendis cumque tempore libero necessitatibus, deleniti temporibus adipisci. Voluptatem pariatur rerum iste, porro fugiat magni itaque alias...</p>
-					<a href="product-detail.html" class="read-more">Read More</a>
-				</div>
-			</li>
-			<li>
-				<div class="product">
-					<a href="product-detail.html" class="no-hover"><img src="img/product1.jpg" alt="product"></a>
-					<a href="product-detail.html" class="no-hover"><h4>Product Name</h4></a>
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis quidem, incidunt, perspiciatis nesciunt reiciendis cumque tempore libero necessitatibus, deleniti temporibus adipisci. Voluptatem pariatur rerum iste, porro fugiat magni itaque alias...</p>
-					<a href="product-detail.html" class="read-more">Read More</a>
-				</div>
-			</li>
-			<li>
-				<div class="product">
-					<a href="product-detail.html" class="no-hover"><img src="img/product1.jpg" alt="product"></a>
-					<a href="product-detail.html" class="no-hover"><h4>Product Name</h4></a>
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis quidem, incidunt, perspiciatis nesciunt reiciendis cumque tempore libero necessitatibus, deleniti temporibus adipisci. Voluptatem pariatur rerum iste, porro fugiat magni itaque alias...</p>
-					<a href="product-detail.html" class="read-more">Read More</a>
-				</div>
-			</li>
-			<li>
-				<div class="product">
-					<a href="product-detail.html" class="no-hover"><img src="img/product1.jpg" alt="product"></a>
-					<a href="product-detail.html" class="no-hover"><h4>Product Name</h4></a>
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis quidem, incidunt, perspiciatis nesciunt reiciendis cumque tempore libero necessitatibus, deleniti temporibus adipisci. Voluptatem pariatur rerum iste, porro fugiat magni itaque alias...</p>
-					<a href="product-detail.html" class="read-more">Read More</a>
-				</div>
-			</li>
-			<li>
-				<div class="product">
-					<a href="product-detail.html" class="no-hover"><img src="img/product1.jpg" alt="product"></a>
-					<a href="product-detail.html" class="no-hover"><h4>Product Name</h4></a>
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis quidem, incidunt, perspiciatis nesciunt reiciendis cumque tempore libero necessitatibus, deleniti temporibus adipisci. Voluptatem pariatur rerum iste, porro fugiat magni itaque alias...</p>
-					<a href="product-detail.html" class="read-more">Read More</a>
-				</div>
-			</li>
-			<li>
-				<div class="product">
-					<a href="product-detail.html" class="no-hover"><img src="img/product1.jpg" alt="product"></a>
-					<a href="product-detail.html" class="no-hover"><h4>Product Name</h4></a>
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis quidem, incidunt, perspiciatis nesciunt reiciendis cumque tempore libero necessitatibus, deleniti temporibus adipisci. Voluptatem pariatur rerum iste, porro fugiat magni itaque alias...</p>
-					<a href="product-detail.html" class="read-more">Read More</a>
-				</div>
-			</li>
-		</ul>
-	  </div>
-	  <a href="products.html" class="main-btn no-hover">View All Products</a>
-	</div>
-</div>
+{embed="embeds/products"}
 
-<footer class="group">
-	<a href="/" class="no-hover"><img src="img/logo.png" alt="Nanotag Technologies" id="footer-logo"></a>
-	<div id="footer-nav">
-		<ul id="main-nav">
-			<li><a href="index.html">Home</a></li>
-			<li><a href="about.html">About</a></li>
-			<li><a href="products.html">Products</a></li>
-			<li><a href="news.html">News</a></li>
-			<li><a href="contact.html">Contact</a></li>
-		</ul>
-		<ul id="subnav">
-			<li><a href="#">FAQs</a></li>
-			<li><a href="#">Privacy Policy</a></li>
-			<li><a href="#">Terms & Conditions</a></li>
-			<li><a href="#" class="icon-facebook no-hover" aria-hidden="true"></a></li>
-			<li><a href="#" class="icon-linkedin no-hover" aria-hidden="true"></a></li>
-		</ul>
-	</div>
-	<p id="copy">&copy; Nanotag Technologies 2015</p>
-	<p id="postroch">Site by <a href="http://postroch.com" target="_blank" class="no-hover">POSTROCH</a></p>
-</footer>
-
-<script src="js/nanotag.min.js"></script>
+{embed="embeds/footer"}
 <script>
 	(function() {
 
@@ -208,3 +57,4 @@
 </script>
 </body>
 </html>
+{/exp:channel:entries}

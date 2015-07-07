@@ -6,16 +6,10 @@
 {embed="embeds/header"}
 
 <div class="inner">
-	<div class="inner-content group {if '{structure:child_ids}' == ''}full-width{/if}">
-		<h1>{title}</h1>
-		{page_content}
+	<div class="inner-content group full-width">
+		<h1>Search Results</h1>
+		<p>Sorry, your search terms returned no results. Please <a href="{site_url}products">try again</a>.</p>
 	</div>
-	{if '{structure:child_ids}' != ''}
-	<div class="sub-menu">
-		<h4>In This Section</h4>
-		{exp:structure:nav start_from ="/{segment_1}" max_depth="2"}
-	</div>
-	{/if}
 </div>
 
 {embed="embeds/products"}

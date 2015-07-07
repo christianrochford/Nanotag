@@ -73,3 +73,7 @@ header{
 .home header {
 	background: $white;
 }
+header.modal {
+	position: fixed;
+	background: $white;
+}

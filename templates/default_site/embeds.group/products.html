@@ -1,59 +1,23 @@
 <div id="products">
 	<div class="wrapper">
 		<h2>Products</h2>
-		<p id="intro-par">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod voluptatum repudiandae temporibus praesentium odio reiciendis qui molestias laboriosam ab. Nisi doloribus adipisci at, earum enim, sit laudantium est iste aut!</p>
+		{exp:channel:entries channel="inner" limit="1" dynamic="no" url_title="products" disable="{gv_disable_all}"}
+		<p id="intro-par">{exp:eehive_hacksaw}{page_content}{/exp:eehive_hacksaw}</p>
+		{/exp:channel:entries}
 		<div class="flexslider">
-          <ul class="slides">
+      <ul class="slides">
+				{exp:channel:entries channel="product" limit="10" dynamic="no" orderby="random" disable="{gv_disable_all}"}
 			<li>
 				<div class="product">
-					<a href="product-detail.html" class="no-hover"><img src="img/product1.jpg" alt="product"></a>
-					<a href="product-detail.html" class="no-hover"><h4>Product Name</h4></a>
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis quidem, incidunt, perspiciatis nesciunt reiciendis cumque tempore libero necessitatibus, deleniti temporibus adipisci. Voluptatem pariatur rerum iste, porro fugiat magni itaque alias...</p>
-					<a href="product-detail.html" class="read-more">Read More</a>
+					<a href="{page_url}" class="no-hover"><img src="{product_image}" alt="product"></a>
+					<a href="{page_url}" class="no-hover"><h4>{title}</h4></a>
+					<p>{exp:eehive_hacksaw words="20" append="..."}{description}{/exp:eehive_hacksaw}</p>
+					<a href="{page_url}" class="read-more">Read More</a>
 				</div>
 			</li>
-			<li>
-				<div class="product">
-					<a href="product-detail.html" class="no-hover"><img src="img/product1.jpg" alt="product"></a>
-					<a href="product-detail.html" class="no-hover"><h4>Product Name</h4></a>
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis quidem, incidunt, perspiciatis nesciunt reiciendis cumque tempore libero necessitatibus, deleniti temporibus adipisci. Voluptatem pariatur rerum iste, porro fugiat magni itaque alias...</p>
-					<a href="product-detail.html" class="read-more">Read More</a>
-				</div>
-			</li>
-			<li>
-				<div class="product">
-					<a href="product-detail.html" class="no-hover"><img src="img/product1.jpg" alt="product"></a>
-					<a href="product-detail.html" class="no-hover"><h4>Product Name</h4></a>
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis quidem, incidunt, perspiciatis nesciunt reiciendis cumque tempore libero necessitatibus, deleniti temporibus adipisci. Voluptatem pariatur rerum iste, porro fugiat magni itaque alias...</p>
-					<a href="product-detail.html" class="read-more">Read More</a>
-				</div>
-			</li>
-			<li>
-				<div class="product">
-					<a href="product-detail.html" class="no-hover"><img src="img/product1.jpg" alt="product"></a>
-					<a href="product-detail.html" class="no-hover"><h4>Product Name</h4></a>
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis quidem, incidunt, perspiciatis nesciunt reiciendis cumque tempore libero necessitatibus, deleniti temporibus adipisci. Voluptatem pariatur rerum iste, porro fugiat magni itaque alias...</p>
-					<a href="product-detail.html" class="read-more">Read More</a>
-				</div>
-			</li>
-			<li>
-				<div class="product">
-					<a href="product-detail.html" class="no-hover"><img src="img/product1.jpg" alt="product"></a>
-					<a href="product-detail.html" class="no-hover"><h4>Product Name</h4></a>
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis quidem, incidunt, perspiciatis nesciunt reiciendis cumque tempore libero necessitatibus, deleniti temporibus adipisci. Voluptatem pariatur rerum iste, porro fugiat magni itaque alias...</p>
-					<a href="product-detail.html" class="read-more">Read More</a>
-				</div>
-			</li>
-			<li>
-				<div class="product">
-					<a href="product-detail.html" class="no-hover"><img src="img/product1.jpg" alt="product"></a>
-					<a href="product-detail.html" class="no-hover"><h4>Product Name</h4></a>
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis quidem, incidunt, perspiciatis nesciunt reiciendis cumque tempore libero necessitatibus, deleniti temporibus adipisci. Voluptatem pariatur rerum iste, porro fugiat magni itaque alias...</p>
-					<a href="product-detail.html" class="read-more">Read More</a>
-				</div>
-			</li>
+			{/exp:channel:entries}
 		</ul>
 	  </div>
-	  <a href="products.html" class="main-btn no-hover">View All Products</a>
+	  <a href="{site_url}products" class="main-btn no-hover">View All Products</a>
 	</div>
 </div>

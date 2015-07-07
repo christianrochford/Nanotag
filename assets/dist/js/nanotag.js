@@ -11073,14 +11073,14 @@ var outdatedBrowser = function(t) {
 
 	$('#banner').height(winH);
 
-	if (winW < 921) {
+	if (winW < 1071) {
 		$('nav').css({
 			height: winH
 		});
 		$('.dd-parent').addClass('clickable');
 	} else {
 		$('nav').css({
-			height: winH
+			height: 45
 		});
 		$('.dd-parent').removeClass('clickable');
 	}
@@ -11090,7 +11090,7 @@ var outdatedBrowser = function(t) {
 		$('nav').addClass('on');
 		$('.icon-menu').hide();
 	});
-	$('.icon-close').click(function(e) {
+	$('nav .icon-close').click(function(e) {
 		e.preventDefault();
 		$('nav').removeClass('on');
 		$('.icon-menu').show();
@@ -11131,9 +11131,7 @@ var outdatedBrowser = function(t) {
 
 	$('.icon-view').click(function(e) {
 		e.preventDefault();
-		$('header').css({
-			position: 'fixed'
-		});
+		$('header').addClass('modal');
 		$('#gallery').fadeIn(200);
 		$('.gallery-slider').flexslider({
 			slideshow: false,
@@ -11142,20 +11140,16 @@ var outdatedBrowser = function(t) {
 			directionNav: true
 		});
 	});
-	$('.icon-close').click(function(e) {
+	$('#gallery .icon-close').click(function(e) {
 		e.preventDefault();
-		$('header').css({
-			position: 'absolute'
-		});
+		$('header').removeClass('modal');
 		$('#gallery').fadeOut(200);
 		$('.slide').removeClass('on');
 	});
 	$('.gallery-link').click(function(e) {
 		e.preventDefault();
 		application = $(this).attr('data-gallery');
-		$('header').css({
-			position: 'fixed'
-		});
+		$('header').addClass('modal');
 		$('.slide').each(function() {
 			if ($(this).attr('data-application') == application) {
 				$(this).addClass('on');
@@ -11189,7 +11183,7 @@ $(window).resize(function() {
 		$('.dd-parent').addClass('clickable');
 	} else {
 		$('nav').css({
-			height: winH
+			height: 45
 		});
 		$('.icon-menu').hide();
 		$('.dd-parent').removeClass('clickable');

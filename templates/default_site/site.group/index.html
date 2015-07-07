@@ -4,68 +4,46 @@
 
 {embed="embeds/header"}
 
+{exp:channel:entries channel="home" limit="1" disable="{gv_disable_all}"}
 <div id="banner" class="bg-img bg-slider">
 	<div class="banner-slider">
 		<ul class="slides">
+			{homepage_slider}
 			<li>
-				<img src="img/product4.jpg" alt="" class="desaturate">
+				<img src="{homepage_slider:image}" alt="">
 				<div id="intro">
-					<h2>Lorem ipsum dolor sit amet</h2>
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam consequatur eius, sequi, maiores iure eveniet, libero sed eaque dignissimos alias voluptatibus voluptates totam! Vitae voluptas odit iure, dolore, totam debitis.</p>
+					{if homepage_slider:link}<a href="{homepage_slider:link}">{/if}<h2>{homepage_slider:heading}</h2>{if homepage_slider:link}</a>{/if}
+					<p>{homepage_slider:text}</p>
 				</div>
 			</li>
-			<li>
-				<img src="img/product5.jpg" alt="" class="desaturate">
-				<div id="intro">
-					<h2>Lorem ipsum dolor sit amet</h2>
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam consequatur eius, sequi, maiores iure eveniet, libero sed eaque dignissimos alias voluptatibus voluptates totam! Vitae voluptas odit iure, dolore, totam debitis.</p>
-				</div>
-			</li>
-			<li>
-				<img src="img/product6.jpg" alt="" class="desaturate">
-				<div id="intro">
-					<h2>Lorem ipsum dolor sit amet</h2>
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam consequatur eius, sequi, maiores iure eveniet, libero sed eaque dignissimos alias voluptatibus voluptates totam! Vitae voluptas odit iure, dolore, totam debitis.</p>
-				</div>
-			</li>
-			<li>
-				<img src="img/product7.jpg" alt="" class="desaturate">
-				<div id="intro">
-					<h2>Lorem ipsum dolor sit amet</h2>
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam consequatur eius, sequi, maiores iure eveniet, libero sed eaque dignissimos alias voluptatibus voluptates totam! Vitae voluptas odit iure, dolore, totam debitis.</p>
-				</div>
-			</li>
+			{/homepage_slider}
 		</ul>
 	</div>
 </div>
-
+{/exp:channel:entries}
 {embed="embeds/products"}
 
 <div id="news">
 	<div class="wrapper">
 		<h2>News</h2>
-		<p id="intro-par">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod voluptatum repudiandae temporibus praesentium odio reiciendis qui molestias laboriosam ab. Nisi doloribus adipisci at, earum enim, sit laudantium est iste aut!</p>
+		{exp:channel:entries channel="inner" url_title="news" limit="1" dynamic="no" disable="{gv_disable_all}"}
+		<p id="intro-par">{exp:eehive_hacksaw}{page_content}{/exp:eehive_hacksaw}</p>
+		{/exp:channel:entries}
 		<div id="news-wrapper">
-	        <ul class="group">
+	    <ul class="group">
+				{exp:channel:entries channel="news" limit="2" dynamic="no" disable="{gv_disable_all}"}
 				<li>
 					<div class="news-item">
-						<img src="img/product1-small.jpg" alt="news" class="desaturate">
-						<h4>Lorem ipsum dolor sit amet, consectetur adipisicing elit</h4>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis quidem, incidunt, perspiciatis nesciunt reiciendis cumque tempore libero necessitatibus, deleniti temporibus adipisci. Voluptatem pariatur rerum iste, porro fugiat magni itaque alias...</p>
-						<a href="#">Read More</a>
+						<img src="{news_image}" alt="news" class="desaturate">
+						<h4>{title}</h4>
+						<p>{exp:eehive_hacksaw words="20" append="..."}{news_content}{/exp:eehive_hacksaw}</p>
+						<a href="{page_url}">Read More</a>
 					</div>
 				</li>
-				<li>
-					<div class="news-item">
-						<img src="img/product2-small.jpg" alt="news" class="desaturate">
-						<h4>Lorem ipsum dolor sit amet, consectetur adipisicing elit</h4>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis quidem, incidunt, perspiciatis nesciunt reiciendis cumque tempore libero necessitatibus, deleniti temporibus adipisci. Voluptatem pariatur rerum iste, porro fugiat magni itaque alias...</p>
-						<a href="#">Read More</a>
-					</div>
-				</li>
+				{/exp:channel:entries}
 			</ul>
 		</div>
-		<a href="news.html" class="main-btn no-hover">More News</a>
+		<a href="{site_url}news" class="main-btn no-hover">More News</a>
 	</div>
 </div>
 
