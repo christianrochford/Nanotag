@@ -6,152 +6,173 @@
 
 <div class="application-form">
 	<div class="wrapper">
-		<form class="form-horizontal" method="" action="" novalidate="novalidate">
+		<p id="no-products" style="margin: 20px;">You currently have no products in your cart. Have a look at our <a href="{site_url}products">products</a>.</p>
+		{exp:freeform:form form_name="cart" form:id="order-form" form:class="form-horizontal" return="cart/thank-you" required="name|email|phone|company|purchase_order|vat_no|address" inline_errors="yes"}
 			<div class="form-section group">
 				<div class="form-wrapper group">
 					<h1>Shopping Cart</h1>
 					<div id="cart" class="group">
-						<table>
+						<table id="cart-table">
 						  <tr class="blue">
 						    <th class="left">Product Name</th>
 						    <th>Conjugation</th>
-						    <th>CAT#</th>
-						    <th>Price</th>
+						    <th>Price (&euro;)</th>
 						    <th>Quantity</th>
-						    <th>Total</th>
+						    <th>Total (&euro;)</th>
 						    <th>Remove</th>
 						  </tr>
-						  <tr>
-						    <td class="left">Product Name</td>
-						    <td>
-						    	<select name="" id="">
-									<option value="">Select option</option>
-									<option value="">None</option>
-									<option value="">alexa488</option>
-									<option value="">Cy3</option>
-									<option value="">Custom</option>
-								</select>
-						    </td>
-						    <td>12345</td>
-						    <td>50.00</td>
-						    <td>1</td>
-						    <td>50.00</td>
-						    <td><input type="checkbox" name="remove" value="remove" /></td>
-						  </tr>
-						  <tr>
-						    <td class="left">Product Name</td>
-						    <td>
-						    	<select name="" id="">
-									<option value="">Select option</option>
-									<option value="">None</option>
-									<option value="">alexa488</option>
-									<option value="">Cy3</option>
-									<option value="">Custom</option>
-								</select>
-						    </td>
-						    <td>12345</td>
-						    <td>50.00</td>
-						    <td>2</td>
-						    <td>100.00</td>
-						    <td><input type="checkbox" name="remove" value="remove" /></td>
-						  </tr>
-						  <tr>
-						    <td class="left">Product Name</td>
-						    <td>
-						    	<select name="" id="">
-									<option value="">Select option</option>
-									<option value="">None</option>
-									<option value="">alexa488</option>
-									<option value="">Cy3</option>
-									<option value="">Custom</option>
-								</select>
-						    </td>
-						    <td>12345</td>
-						    <td>50.00</td>
-						    <td>3</td>
-						    <td>150.00</td>
-						    <td><input type="checkbox" name="remove" value="remove" /></td>
-						  </tr>
-						  <tr>
-						    <td class="left">Product Name</td>
-						    <td>
-						    	<select name="" id="">
-									<option value="">Select option</option>
-									<option value="">None</option>
-									<option value="">alexa488</option>
-									<option value="">Cy3</option>
-									<option value="">Custom</option>
-								</select>
-						    </td>
-						    <td>12345</td>
-						    <td>50.00</td>
-						    <td>1</td>
-						    <td>50.00</td>
-						    <td><input type="checkbox" name="remove" value="remove" /></td>
-						  </tr>
-						  <tr>
-						    <td class="left">Product Name</td>
-						    <td>
-						    	<select name="" id="">
-									<option value="">Select option</option>
-									<option value="">None</option>
-									<option value="">alexa488</option>
-									<option value="">Cy3</option>
-									<option value="">Custom</option>
-								</select>
-						    </td>
-						    <td>12345</td>
-						    <td>50.00</td>
-						    <td>2</td>
-						    <td>100.00</td>
-						    <td><input type="checkbox" name="remove" value="remove" /></td>
-						  </tr>
+							<!-- Append cart items -->
 						</table>
-						<a href="#" class="main-btn">Update Cart</a>
+						<a href="#" id="update-cart" class="main-btn">Update Cart</a>
 					</div>
 					<label for="name">Name<span class="required_field">*</span></label>
 					<div class="input-wrapper">
-						<input type="text" name="name" required="required" class="error">
-						<span generated="true" class="error">Please enter your name.</span>
+						<input type="text" name="name" {if freeform:error:name}class="error"{/if}>
+						{if freeform:error:name}<span generated="true" class="error">Please enter your name.</span>{/if}
 					</div>
 					<label for="email">Email address<span class="required_field">*</span></label>
-			        <div class="input-wrapper">
-			          <input type="email" name="email" required="required" class="error">
-			          <span generated="true" class="error">Please enter a valid email address.</span>
-			        </div>
-			        <label for="phone">Phone<span class="required_field">*</span></label>
+	        <div class="input-wrapper">
+	          <input type="email" name="email" {if freeform:error:email}class="error"{/if}>
+	          {if freeform:error:email}<span generated="true" class="error">Please enter a valid email address.</span>{/if}
+	        </div>
+	        <label for="phone">Phone<span class="required_field">*</span></label>
 					<div class="input-wrapper">
-						<input type="text" name="phone" required="required">
+						<input type="text" name="phone" {if freeform:error:phone}class="error"{/if}>
+						{if freeform:error:phone}<span generated="true" class="error">Please enter your phone number.</span>{/if}
 					</div>
-					<label for="institute-company">Institute/Company<span class="required_field">*</span></label>
+					<label for="company">Institute/Company<span class="required_field">*</span></label>
 					<div class="input-wrapper">
-						<input type="text" name="institute-company" required="required">
+						<input type="text" name="company" {if freeform:error:company}class="error"{/if}>
+						{if freeform:error:company}<span generated="true" class="error">Please enter your institute/company name.</span>{/if}
 					</div>
-					<label for="purchase-order">Purchase Order<span class="required_field">*</span></label>
+					<label for="purchase_order">Purchase Order<span class="required_field">*</span></label>
 					<div class="input-wrapper">
-						<input type="text" name="purchase-order" required="required">
+						<input type="text" name="purchase_order" {if freeform:error:purchase_order}class="error"{/if}>
+						{if freeform:error:purchase_order}<span generated="true" class="error">Please enter your purchase order number.</span>{/if}
 					</div>
-					<label for="vat">VAT NO<span class="required_field">*</span></label>
+					<label for="vat_no">VAT NO<span class="required_field">*</span></label>
 					<div class="input-wrapper">
-						<input type="text" name="vat" required="required">
+						<input type="text" name="vat_no" {if freeform:error:vat_no}class="error"{/if}>
+						{if freeform:error:vat_no}<span generated="true" class="error">Please enter your VAT number.</span>{/if}
 					</div>
 					<label for="address">Address<span class="required_field">*</span></label>
-		      		<div class="input-wrapper">
-						<textarea name="address" required="required"></textarea>
+      		<div class="input-wrapper">
+						<textarea name="address"></textarea>
+						{if freeform:error:address}<span generated="true" class="error">Please enter your address.</span>{/if}
 					</div>
-					<label for="comments">Comments<span class="required_field">*</span></label>
+					<label for="message">Comments</label>
 					<p class>If ordering custom conjugations please enter the details of your request here:</p>
-		      		<div class="input-wrapper">
-						<textarea name="comments" required="required"></textarea>
+	      	<div class="input-wrapper">
+						<textarea name="message"></textarea>
 					</div>
+					<input type="hidden" id="order" name="order" value="">
 					<div class="submit-wrapper">
-						<input type="submit" value="Submit" class="main-btn">
+						<input type="submit" value="Submit" id="submit-cart" class="main-btn">
 					</div>
 				</div>
 			</div>
-		</form>
+		{/exp:freeform:form}
 	</div>
 </div>
+{embed="embeds/products"}
 {embed="embeds/footer"}
+<script>
+	$(document).ready(function(){
+		// Show cart items
+		cart = Cookies.get('cart');
+		if(cart){
+			order = JSON.parse(cart);
+			$('#no-products,#products').hide();
+			$.each(order, function(i, product) {
+			    var item = '<tr class="cart-item"><td class="left"><span class="product-name">'+product[0]+'</span> <span class="item-quantity">('+product[1]+')</span></td><td><span class="conjugation">'+product[2]+'</span></td><td class="item-price">'+product[3]+'</td><td><select name="quantity" class="quantity"><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option></select></td><td class="total">'+product[3]+'</td><td><input type="checkbox" name="remove" value="remove" data-cart-item="'+i+'" class="remove"/></td></tr>';
+					$('#cart-table').append(item);
+			});
+		} else {
+			$('#order-form').hide();
+		}
+		// Update price on quantity selection
+		$('.quantity').change(function(){
+			var quantity = $(this).find('option:selected').val();
+			var price = $(this).parent().parent().find('.item-price').text();
+			if(price != 'Request Quote'){
+				var total = (quantity * price).toFixed(2);
+				$(this).parent().parent().find('.total').text(total);
+			}
+		});
+		// Remove items on Update
+		$('#update-cart').click(function(){
+			indices = [];
+			$('.remove').each(function(){
+				if($(this).prop('checked')){
+					var removeItem = $(this).attr('data-cart-item');
+					indices.push(removeItem);
+				}
+			});
+			indices.sort(function(a,b){ return b - a; });
+			for (var i = 0, len=indices.length; i < len; i++) {
+				order.splice(indices[i],1);
+			}
+			var newOrder = JSON.stringify(order);
+			if(newOrder = '[]'){
+				Cookies.remove('cart');
+			} else {
+				Cookies.set('cart', newOrder);
+			}
+			location.reload();
+		});
+		// Place order on submit
+		$('#order-form').submit(function(){
+			orderList='';
+			$('.cart-item').each(function(){
+				var title = $(this).find('.product-name').text();
+				var conjugation = $(this).find('.conjugation').text();
+				var quantity = $(this).find('.quantity').val();
+				orderList = orderList + '\'' + title + ' ' + '-' + conjugation + '\'(x' + quantity + '),';
+			});
+			$('#order').attr('value',orderList);
+			Cookies.set('cart','');
+		});
+	});
+</script>
+<script>
+	(function() {
+
+  // store the slider in a local variable
+  var $window = $(window),
+      flexslider;
+
+  // tiny helper function to add breakpoints
+  function getGridSize() {
+    return (window.innerWidth < 480) ? 1 :
+           (window.innerWidth < 760) ? 2 : 3;
+  }
+
+  $(function() {
+    SyntaxHighlighter.all();
+  });
+
+  $window.load(function() {
+    $('.flexslider').flexslider({
+      animation: "slide",
+      animationLoop: true,
+      itemWidth: 400,
+      itemMargin: 0,
+      minItems: 1,
+      maxItems: 4,
+      move: 1,
+      minItems: getGridSize(), // use function to pull in initial value
+      maxItems: getGridSize() // use function to pull in initial value
+    });
+  });
+
+  // check grid size on resize event
+  $window.resize(function() {
+    var gridSize = getGridSize();
+
+    flexslider.vars.minItems = gridSize;
+    flexslider.vars.maxItems = gridSize;
+  });
+}());
+</script>
 </body>
 </html>

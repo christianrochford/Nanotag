@@ -7,56 +7,84 @@
 
 <div class="inner" id="product-detail">
 	<div class="inner-content group" id="product-content">
-		<h1>{title}</h1>
+		<h1 id="product-name">{title}</h1>
 		<div id="intro" class="group">
 			<div id="image-wrap">
 				<img src="{product_image}" alt="{title}">
 				<a href="#gallery" class="icon-view no-hover" aria-hidden="true"></a>
 			</div>
 			<div id="text-wrap">
-				<h2>Description</h2>
 				<p>{description}</p>
-				<a href="#" class="main-btn no-hover">Add to Cart</a>
+				<p>
+					{specifications}
+					<span>Immunogen:</span>
+					{specifications:immunogen}<br>
+					<span>Specificity:</span>
+					{specifications:specificity}<br>
+					<span>Epitope:</span>
+					{specifications:epitope}<br>
+					<span>Reactivity:</span>
+					{specifications:reactivity}<br>
+					{/specifications}
+				</p>
 			</div>
 		</div>
-		<h2>Specifications</h2>
-		<p>
-			{specifications}
-			<span>Immunogen:</span>
-			{specifications:immunogen}<br>
-			<span>Specificity:</span>
-			{specifications:specificity}<br>
-			<span>Epitope:</span>
-			{specifications:epitope}<br>
-			<span>Reactivity:</span>
-			{specifications:reactivity}<br>
-			{/specifications}
-		</p>
-		<h2>Applications</h2>
-		{applications}
-		<h5>{applications:application_name}</h5>
-		<ul>
-			{if applications:protocol}<li><a href="{applications:protocol}" class="icon-file no-hover" aria-hidden="true" target="_blank">Protocol</a></li>{/if}
-			{if applications:msds}<li><a href="{applications:msds}" class="icon-file no-hover" aria-hidden="true" target="_blank">MSDS</a></li>{/if}
-			{if '{applications:gallery}'=='Yes'}<li><a href="#" data-gallery="{applications:application_name}" class="icon-image no-hover gallery-link" aria-hidden="true">Gallery</a></li>{/if}
-		</ul>
-		{/applications}
-		<h2>Conjugations</h2>
-		<ul>
+		<div id="applications">
+			<h2>Applications</h2>
+			{applications}
+			<div class="application">
+				<h5>{applications:application_name}</h5>
+				<ul>
+					{if applications:protocol}<li><a href="{applications:protocol}" class="icon-file no-hover" aria-hidden="true" target="_blank">Protocol</a></li>{/if}
+					{if applications:msds}<li><a href="{applications:msds}" class="icon-file no-hover" aria-hidden="true" target="_blank">MSDS</a></li>{/if}
+					{if '{applications:gallery}'=='Yes'}<li><a href="#" data-gallery="{applications:application_name}" class="icon-image no-hover gallery-link" aria-hidden="true">Gallery</a></li>{/if}
+				</ul>
+			</div>
+			{/applications}
+		</div>
+		<div id="conjugations">
+			<h2>Conjugations</h2>
+			{no_conjugation}
+			<div class="conjugation">
+				<h5>None</h5>
+				<ul>
+					<li>Quantity: {no_conjugation:quantity}</li>
+					<li>Price: &euro;{no_conjugation:price}</li>
+				</ul>
+				<a href="#" data-name="{title}" data-quantity="{no_conjugation:quantity}" data-conjugation="None" data-number="{product_number}" data-price="{no_conjugation:price}" class="main-btn no-hover add-to-cart">Add to Cart</a>
+			</div>
+			{/no_conjugation}
 			{conjugations}
-			<li>{conjugations:name} - {conjugations:price_description}</li>
+			<div class="conjugation">
+				<h5>{conjugations:name}</h5>
+				<ul>
+					<li>Quantity: {conjugations:quantity}</li>
+					<li>Price: &euro;{conjugations:price}</li>
+				</ul>
+				<a href="#" data-name="{title}" data-quantity="{conjugations:quantity}" data-conjugation="{conjugations:name}" data-number="{product_number}" data-price="{conjugations:price}" class="main-btn no-hover add-to-cart">Add to Cart</a>
+			</div>
 			{/conjugations}
 			{if '{custom_conjugation}'=='Yes'}
-			<li>Custom - Please <a href="{site_url}cart">contact us</a>.</li>
+			<div class="conjugation">
+				<h5>Custom</h5>
+				<ul>
+					<li>Quantity: Request Order</li>
+					<li>Price: Request Order</li>
+				</ul>
+				<p></p>
+				<a href="#" data-name="{title}" data-quantity="Please specify below." data-conjugation="Custom" data-number="{product_number}" data-price="Request Quote" class="main-btn no-hover add-to-cart">Add to Cart</a>
+			</div>
 			{/if}
-		</ul>
+		</div>
 		{if '{references:total_rows}' > 0}
-		<h2>References</h2>
-		{references}
-		<p>{references:title}<br>{references:details}</p>
-		{/references}
-		{/if}
-		<a href="#" class="main-btn" style="margin-top:40px;">Add to Cart</a>
+		<div id="references">
+			<h2>References</h2>
+			{references}
+			<p>{references:title}<br>{references:details}</p>
+			{/references}
+			{/if}
+		</div>
+		<a href="{site_url}cart" class="main-btn no-hover">View Cart</a>
 	</div>
 </div>
 
@@ -97,6 +125,42 @@
 	</div>
 </div>
 {embed="embeds/footer"}
+<script>
+	$(document).ready(function(){
+		if(Cookies.get('cart')){
+			var order = Cookies.get('cart');
+			cart = JSON.parse(order);
+			// Update buttons if in cart
+			var productName = $('#product-name').text();
+			var orderedConjugations = '';
+			$.each(cart, function(i, product) {
+				if(product[0] == productName){
+					orderedConjugations = orderedConjugations + ' ' + product[2];
+				}
+			});
+			$('.add-to-cart').each(function(){
+				var conjugation = $(this).attr('data-conjugation');
+				if(orderedConjugations.indexOf(conjugation) > 0){
+					$(this).text('Added to Cart');
+				}
+			});
+		} else {
+			cart = new Array();
+		}
+		$('.add-to-cart').click(function(e){
+			e.preventDefault();
+			var productName = $(this).attr('data-name');
+			var quantity = $(this).attr('data-quantity');
+			var conjugation = $(this).attr('data-conjugation');
+			var price = $(this).attr('data-price');
+			var product = [productName,quantity,conjugation,price];
+			cart.push(product);
+			var order = JSON.stringify(cart);
+			Cookies.set('cart', order);
+			$(this).text('Added to Cart');
+		});
+	});
+</script>
 </body>
 </html>
 {/exp:channel:entries}

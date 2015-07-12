@@ -6,30 +6,31 @@
 
 <div class="application-form">
 	<div class="wrapper">
-		<form class="form-horizontal" method="" action="" novalidate="novalidate">
+			{exp:freeform:form form_name="contact" form:class="form-horizontal" return="contact/thank-you" required="name|email|message" inline_errors="yes"}
 			<div class="form-section group">
 				<div class="form-wrapper group">
 					<h1>Contact Us</h1>
 					<label for="name">Name<span class="required_field">*</span></label>
 					<div class="input-wrapper">
-						<input type="text" name="name" required="required" class="error">
-						<span generated="true" class="error">Please enter your name.</span>
+						<input type="text" name="name" {if freeform:error:name}class="error"{/if}>
+						{if freeform:error:name}<span generated="true" class="error">Please enter your name.</span>{/if}
 					</div>
 					<label for="email">Email address<span class="required_field">*</span></label>
 			        <div class="input-wrapper">
-			          <input type="email" name="email" required="required" class="error">
-			          <span generated="true" class="error">Please enter a valid email address.</span>
+			          <input type="email" name="email" {if freeform:error:email}class="error"{/if}>
+			          {if freeform:error:email}<span generated="true" class="error">Please enter a valid email address.</span>{/if}
 			        </div>
 					<label for="message">Message<span class="required_field">*</span></label>
 		      		<div class="input-wrapper">
-						<textarea name="message" required="required"></textarea>
+						<textarea name="message"></textarea>
+						{if freeform:error:message}<span generated="true" class="error">Please enter a message.</span>{/if}
 					</div>
 					<div class="submit-wrapper">
 						<input type="submit" value="Submit" class="main-btn">
 					</div>
 				</div>
 			</div>
-		</form>
+		{/exp:freeform:form}
 	</div>
 </div>
 

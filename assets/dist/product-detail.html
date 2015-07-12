@@ -52,7 +52,7 @@
 			<div id="text-wrap">
 				<h2>Description</h2>
 				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur sequi id vel temporibus neque, consequatur natus tempora sit libero obcaecati, eligendi mollitia quam laudantium impedit eum eos voluptatibus, explicabo</p>
-				<a href="#" class="main-btn no-hover">Add to Cart</a>
+				<a href="#" data-product="product-number" class="main-btn no-hover add-to-cart">Add to Cart</a>
 			</div>
 		</div>
 		<h2>Specifications</h2>
@@ -95,7 +95,7 @@
 		Am J Pathol 1998 (152):879-884</p>
 		<p>Aggregation of alpha-synuclein in Lewy bodies of sporadic Parkinson′s disease and dementia with Lewy bodies.<br>Baba M, Nakajo S, Tu PH, Tomita T, Nakaya K, Lee VM, Trojanowski JQ, Iwatsubo T
 		Am J Pathol 1998 (152):879-884</p>
-		<a href="#" class="main-btn" style="margin-top:40px;">Add to Cart</a>
+		<a href="#" class="main-btn add-to-cart"  data-product="product-number" style="margin-top:40px;">Add to Cart</a>
 	</div>
 </div>
 
@@ -185,5 +185,20 @@
 </div>
 
 <script src="js/nanotag.min.js"></script>
+<script>
+	$(document).ready(function(){
+		if(Cookies.get('cart') != null ){
+			cart = Cookies.get('cart');
+		} else {
+			cart = '';
+		}
+		$('.add-to-cart').click(function(e){
+			e.preventDefault();
+			var productNumber = $(this).attr('data-product').val();
+			cart = cart + ' ' + productNumber;
+			Cookies.set('cart', cart);
+		});
+	});
+</script>
 </body>
 </html>
