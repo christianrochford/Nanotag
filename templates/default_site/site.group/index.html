@@ -21,7 +21,32 @@
 	</div>
 </div>
 {/exp:channel:entries}
-{embed="embeds/products"}
+
+<div id="products">
+	<div class="wrapper">
+		<h2>Products</h2>
+		{exp:channel:entries channel="inner" limit="1" dynamic="no" url_title="products" disable="{gv_disable_all}"}
+		<p id="intro-par">{exp:eehive_hacksaw}{page_content}{/exp:eehive_hacksaw}</p>
+		{/exp:channel:entries}
+		<div class="flexslider">
+      <ul class="slides">
+				{exp:channel:entries channel="home" limit="1" disable="{gv_disable_all}"}
+				{featured_products}
+			<li>
+				<div class="product">
+					<a href="{site_url}products/{featured_products:url_title}" class="no-hover"><img src="{featured_products:product_image}" alt="product"></a>
+					<a href="{site_url}products/{featured_products:url_title}" class="no-hover"><h4>{featured_products:title}</h4></a>
+					<p>{exp:eehive_hacksaw words="20" append="..."}{featured_products:description}{/exp:eehive_hacksaw}</p>
+					<a href="{site_url}products/{featured_products:url_title}" class="read-more">Read More</a>
+				</div>
+			</li>
+			{/featured_products}
+			{/exp:channel:entries}
+		</ul>
+	  </div>
+	  <a href="{site_url}products" class="main-btn no-hover">View All Products</a>
+	</div>
+</div>
 
 <div id="news">
 	<div class="wrapper">

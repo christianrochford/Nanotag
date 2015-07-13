@@ -17,14 +17,10 @@
 				<p>{description}</p>
 				<p>
 					{specifications}
-					<span>Immunogen:</span>
-					{specifications:immunogen}<br>
-					<span>Specificity:</span>
-					{specifications:specificity}<br>
-					<span>Epitope:</span>
-					{specifications:epitope}<br>
-					<span>Reactivity:</span>
-					{specifications:reactivity}<br>
+					{if '{specifications:total_rows}' > 0}
+					<span>{specifications:title}:</span>
+					{specifications:detail}<br>
+					{/if}
 					{/specifications}
 				</p>
 			</div>
@@ -84,7 +80,7 @@
 			{/references}
 			{/if}
 		</div>
-		<a href="{site_url}cart" class="main-btn no-hover">View Cart</a>
+		<a href="{site_url}cart" style="margin-top:40px;" class="main-btn no-hover">View Cart</a>
 	</div>
 </div>
 

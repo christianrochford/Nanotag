@@ -21,7 +21,7 @@
 				font-weight: lighter;
 				color: $black;
 				text-align:center;
-				
+
 				select {
 					background: #fdfdfd;
 					border: 1px solid #bfbbbb;
@@ -37,7 +37,7 @@
 					width: 100%;
 					-webkit-appearance: none;
 					-webkit-border-radius: 0px;
-					cursor: pointer;	
+					cursor: pointer;
 					&:focus {
 						border: 1px solid $blue;
 					}
@@ -55,4 +55,3 @@
 		}
 	}
 }
-

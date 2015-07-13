@@ -15,10 +15,9 @@
 				<label for="filter">Filter:</label>
 				<select name="filter" id="filter">
 					<option value="">All</option>
-					<option value="fluorescent">Fluorescent</option>
-					<option value="beads">Beads</option>
-					<option value="proteins-enzymes">Proteins & Enzymes</option>
-					<option value="others">Others</option>
+					{exp:channel:categories category_group="1"}
+					<option value="{category_url_title}">{category_name}</option>
+					{/exp:channel:categories}
 				</select>
 			</div>
 			{exp:search:simple_form channel="product" form_class="group" search_in="everywhere" result_page="search/results" no_result_page="search/no-results"}
@@ -28,8 +27,8 @@
 		</div>
 		<div id="list-wrapper">
       <ul>
-				{exp:channel:entries channel="product" dynamic="no" orderby="random" disable="{gv_disable_all}"}
-			<li class="list-item {product_category}">
+				{exp:channel:entries channel="product" dynamic="no" category_group="1"}
+			<li class="list-item {categories}{category_url_title} {/categories}">
 				<div class="item">
 					<a href="{page_url}" class="no-hover"><img src="{product_image}" alt="{title}"></a>
 					<a href="{page_url}" class="no-hover"><h4>{title}</h4></a>
