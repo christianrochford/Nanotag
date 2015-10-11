@@ -149,7 +149,10 @@
 			var quantity = $(this).attr('data-quantity');
 			var conjugation = $(this).attr('data-conjugation');
 			var price = $(this).attr('data-price');
-			var product = [productName,quantity,conjugation,price];
+			var price = $(this).attr('data-price');
+			var amount = '1';
+			var totalPrice = price;
+			var product = [productName,quantity,conjugation,price,amount,totalPrice];
 			cart.push(product);
 			var order = JSON.stringify(cart);
 			Cookies.set('cart', order);

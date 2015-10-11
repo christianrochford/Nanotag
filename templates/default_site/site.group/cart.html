@@ -84,7 +84,7 @@
 			order = JSON.parse(cart);
 			$('#no-products,#products').hide();
 			$.each(order, function(i, product) {
-			    var item = '<tr class="cart-item"><td class="left"><span class="product-name">'+product[0]+'</span> <span class="item-quantity">('+product[1]+')</span></td><td><span class="conjugation">'+product[2]+'</span></td><td class="item-price">'+product[3]+'</td><td><select name="quantity" class="quantity"><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option></select></td><td class="total">'+product[3]+'</td><td><input type="checkbox" name="remove" value="remove" data-cart-item="'+i+'" class="remove"/></td></tr>';
+			    var item = '<tr class="cart-item" data-name="'+product[0]+'" data-quantity="'+product[1]+'" data-conjugation="'+product[2]+'" data-price="'+product[3]+'" data-amount="'+product[4]+'" data-total-price="'+product[5]+'"><td class="left"><span class="product-name">'+product[0]+'</span> <span class="item-quantity">('+product[1]+')</span></td><td><span class="conjugation">'+product[2]+'</span></td><td class="item-price">'+product[3]+'</td><td><input type="text" name="quantity" class="quantity" value="'+product[4]+'"></td><td class="total">'+product[5]+'</td><td><input type="checkbox" name="remove" value="remove" data-cart-item="'+i+'" class="remove"/></td></tr>';
 					$('#cart-table').append(item);
 			});
 		} else {
@@ -92,32 +92,36 @@
 		}
 		// Update price on quantity selection
 		$('.quantity').change(function(){
-			var quantity = $(this).find('option:selected').val();
+			var quantity = $(this).val();
 			var price = $(this).parent().parent().find('.item-price').text();
 			if(price != 'Request Quote'){
 				var total = (quantity * price).toFixed(2);
 				$(this).parent().parent().find('.total').text(total);
+				$(this).parent().parent().attr('data-total-price',total)
 			}
+			$(this).parent().parent().attr('data-amount',quantity);
 		});
 		// Remove items on Update
-		$('#update-cart').click(function(){
-			indices = [];
+		$('#update-cart').click(function(e){
+			e.preventDefault();
 			$('.remove').each(function(){
 				if($(this).prop('checked')){
-					var removeItem = $(this).attr('data-cart-item');
-					indices.push(removeItem);
+					$(this).parent().parent().addClass('delete');
 				}
 			});
-			indices.sort(function(a,b){ return b - a; });
-			for (var i = 0, len=indices.length; i < len; i++) {
-				order.splice(indices[i],1);
-			}
-			var newOrder = JSON.stringify(order);
-			if(newOrder = '[]'){
-				Cookies.remove('cart');
-			} else {
+			newCart = new Array();
+			$('.cart-item').not('.delete').each(function(){
+				var productName = $(this).attr('data-name');
+				var quantity = $(this).attr('data-quantity');
+				var conjugation = $(this).attr('data-conjugation');
+				var price = $(this).attr('data-price');
+				var amount = $(this).attr('data-amount');
+				var totalPrice = $(this).attr('data-total-price');
+				var product = [productName,quantity,conjugation,price,amount,totalPrice];
+				newCart.push(product);
+				var newOrder = JSON.stringify(newCart);
 				Cookies.set('cart', newOrder);
-			}
+			});
 			location.reload();
 		});
 		// Place order on submit
@@ -133,46 +137,6 @@
 			Cookies.set('cart','');
 		});
 	});
-</script>
-<script>
-	(function() {
-
-  // store the slider in a local variable
-  var $window = $(window),
-      flexslider;
-
-  // tiny helper function to add breakpoints
-  function getGridSize() {
-    return (window.innerWidth < 480) ? 1 :
-           (window.innerWidth < 760) ? 2 : 3;
-  }
-
-  $(function() {
-    SyntaxHighlighter.all();
-  });
-
-  $window.load(function() {
-    $('.flexslider').flexslider({
-      animation: "slide",
-      animationLoop: true,
-      itemWidth: 400,
-      itemMargin: 0,
-      minItems: 1,
-      maxItems: 4,
-      move: 1,
-      minItems: getGridSize(), // use function to pull in initial value
-      maxItems: getGridSize() // use function to pull in initial value
-    });
-  });
-
-  // check grid size on resize event
-  $window.resize(function() {
-    var gridSize = getGridSize();
-
-    flexslider.vars.minItems = gridSize;
-    flexslider.vars.maxItems = gridSize;
-  });
-}());
 </script>
 </body>
 </html>
