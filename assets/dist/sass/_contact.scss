@@ -1,15 +1,15 @@
 .application-form {
 	padding: 0;
-	
+
 	.wrapper {
 		max-width: 976px;
-		padding: 80px 0 0 0;
+		padding: 0;
 	}
 
 	h1{
 		text-align: left;
 	}
-	
+
 	.form-wrapper {
 		margin: 0 auto;
 		max-width: 520px;
@@ -19,10 +19,10 @@
 
 	.form-section {
 		margin-bottom: 54px;
-		
+
 		position: relative;
 		width: 100%;
-		
+
 		&:last-child {
 			margin-bottom: 37px;
 		}
@@ -40,11 +40,11 @@
 		text-align: left;
 		text-transform: uppercase;
 	}
-	
+
 	h4 {
 		margin-bottom: 17px;
 	}
-	
+
 	input[type="text"] {
 		background: #fdfdfd;
 		border: 1px solid #bfbbbb;
@@ -57,16 +57,16 @@
 		outline: none;
 		padding: 0 17px;
 		width: 100%;
-		
+
 		&:focus {
 			border: 1px solid $blue;
 		}
-        
+
         &.error {
             border: 1px solid #f54c0a;
         }
 	}
-	
+
 	span.error, span.message {
 		background: #f54c0a;
 		color: $white;
@@ -76,21 +76,21 @@
 		max-width: 395px;
 		padding: 12px 20px;
 		position: relative;
-		
+
 		&.info {
 			background: $blue;
 			display: none;
 			float: left;
-			
+
 			&:before {
 				@include triangle (24px, #f54c0a, up);
 				right: 8px;
 			}
-			
+
 			&.active {
 			}
-		} 
-		
+		}
+
 		&:before {
 			content: "";
 			@include triangle (24px, #f54c0a, up);
@@ -99,33 +99,33 @@
 			top: -22px;
 		}
 	}
-	
+
 	.input-wrapper {
 		margin-bottom: 29px;
 		max-width: 395px;
         position: relative;
 		&.error {
 			position: relative;
-			
+
 			input[type="text"] {
 				border: 1px solid #f54c0a;
 			}
-			
+
 			span {
 				display: block;
 			}
 		}
 	}
-	
+
 	input[type="email"] {
 		@extend input[type="text"];
 	}
-	
+
 	input[type="tel"] {
 		@extend input[type="text"];
 		padding-left: 75px;
 	}
-	
+
 	.selectbox-wrapper {
 		position: relative;
 		margin-bottom: 29px;
@@ -138,7 +138,7 @@
 			top: 1px;
 			right: 1px;
 			z-index: 10;
-			
+
 			&:after {
 				content: "";
 				top: 20px;
@@ -146,15 +146,15 @@
 				position: absolute;
 				@include triangle (18px, #999696, down);
 			}
-			
+
 		}
 		&.error {
 			position: relative;
-			
+
 			span {
 				display: block;
 			}
-			
+
 			&:after {
 				background: #f54c0a;
 				-webkit-box-sizing: border-box;
@@ -174,7 +174,7 @@
 			}
 		}
 	}
-	
+
 	select {
 		@extend input[type="text"];
 		-webkit-appearance: none;
@@ -182,7 +182,7 @@
 		cursor: pointer;
 
 	}
-	
+
 	textarea {
 		background: $white;
 		border: 1px solid #bfbbbb;
@@ -197,7 +197,7 @@
 		padding: 10px 20px;
 		width: 100%;
 	}
-	
+
 	.instruction {
 		display: block;
 		color: $black;
@@ -209,12 +209,12 @@
 		max-width: 395px;
 		overflow-y: auto;
 	}
-	
+
 	.submit-wrapper {
 		margin: 0;
 		padding: 32px 0 14px;
 		max-width: 500px;
-		
+
 		.instruction {
 			margin-top: 25px;
 		}
@@ -234,39 +234,39 @@
 		width: 300px;
 		@include transition(all, 0.3s, ease-in-out);
 	}
-	
+
 	@include breakpoint(tablet-mf) {
-	
+
 		form {
 			clear: both;
 		}
-		
+
 		.form-wrapper {
 			padding-bottom: 10px;
 		}
-		
+
 		.form-section {
 			margin-bottom: 79px;
-			
+
 			p {
 				margin-bottom: 31px;
 			}
 		}
-		
+
 		input[type="text"] {
 			max-width: 395px;
 		}
-	
+
 		.submit-wrapper {
 			max-width: 664px;
 			padding-bottom: 40px;
 			position: relative;
-			
+
 			input[type="submit"] {
 				margin: 0;
 				//max-width: 200px;
 			}
-			
+
 			.instruction {
 				margin-top: 25px;
 				position: absolute;
@@ -276,45 +276,45 @@
 			}
 		}
 	}
-	
+
 	@include breakpoint(desktop-mf) {
-		
+
 		.wrapper {
 			margin: 0 auto;
 			width: 976px;
-			padding: 100px 0 0 0;
+			padding: 0;
 		}
-		
+
 		.form-section {
-			
+
 			p {
 				margin-bottom: 29px;
 				width: 630px;
 			}
-			
+
 			input, label, .input-wrapper, .input-wrapper.error, span.error, span.message, textarea {
 				max-width: 405px;
 			}
-			
+
 			h4, select , .instruction {
 				max-width: 353px;
 			}
-			
+
 			&:last-child {
 				margin-bottom: 65px;
 			}
 		}
-		
+
 		.form-wrapper {
 			max-width: 100%;
 			padding: 43px 0 14px;
 			width: 100%;
 		}
-		
+
 		.input-wrapper.error {
 			position: relative;
 		}
-		
+
 
 		span.error, span.message {
 			left: calc(100% + 42px);
@@ -322,7 +322,7 @@
 			position: absolute;
 			top: -2px;
 			width: 315px;
-			
+
 			&.info {
 				&:before {
 					@include triangle (24px, $blue, left);
@@ -336,7 +336,7 @@
 				top: 14px;
 			}
 		}
-		
+
 		.submit-wrapper {
 			.instruction {
 				left: 40%;

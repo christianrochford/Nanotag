@@ -9,8 +9,7 @@
 	<div class="banner-slider">
 		<ul class="slides">
 			{homepage_slider}
-			<li>
-				<img src="{homepage_slider:image}" alt="">
+			<li style="background: url('{homepage_slider:image}');">
 				<div id="intro">
 					{if homepage_slider:link}<a href="{homepage_slider:link}">{/if}<h2>{homepage_slider:heading}</h2>{if homepage_slider:link}</a>{/if}
 					<p>{homepage_slider:text}</p>

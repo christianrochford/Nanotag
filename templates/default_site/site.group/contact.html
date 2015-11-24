@@ -4,6 +4,15 @@
 
 {embed="embeds/header"}
 
+{exp:channel:entries channel="inner" limit="1" disable="{gv_disable_all}"}
+<div class="inner">
+	<div class="inner-content group {if '{structure:child_ids}' == ''}full-width{/if}">
+		<h1>{title}</h1>
+		{page_content}
+	</div>
+</div>
+{/exp:channel:entries}
+
 <div class="application-form">
 	<div class="wrapper">
 			{exp:freeform:form form_name="contact" form:class="form-horizontal" return="contact/thank-you" required="name|email|message" inline_errors="yes"}
