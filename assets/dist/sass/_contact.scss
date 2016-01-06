@@ -344,3 +344,12 @@
 		}
 	}
 }
+
+#map {
+	width: 100%;
+	height: 300px;
+	top: 78px;
+	@include breakpoint(tablet-mf){
+		height: 500px;
+	}
+}
